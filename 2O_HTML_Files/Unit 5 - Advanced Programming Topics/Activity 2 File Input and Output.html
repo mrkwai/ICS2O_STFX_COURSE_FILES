@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta property="og:title" content="Activity 2: File Input and Output">
+    <title>Activity 2: File Input and Output</title>
+    <link href="../resources/course_techno.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header"><img class="logo" src="../resources/images/STFX Logo.png" />
+        <div class="courseTitle">ICS2O: Introduction to Computer Studies, Grade 10, Open</div>
+
+        <h1>Unit 5: Advanced&nbsp;Programming Concepts</h1>
+        <h2>Activity 2: File Input &amp; Output</h2>
+      </div>
+      <h3>Working with Files</h3>
+      <hr />
+      <p>Almost all programs store some information on a hard drive or a local storage system of some kind. Users routinely expect that information (data) that is inputted in a
+        program to available in later sessions. The ability to use long term storage is a key feature of modern programs. In terms of programming this requires two steps:</p>
+      <ol>
+        <li>store the data into a file.</li>
+        <li>retrieve, load or input the data from the file into a program.</li>
+      </ol>
+      <p>We will be looking at both aspects of this task in this activity.</p>
+      <h4>Storing Data</h4>
+      <p>Python 3 uses an object based approach to file input and output. To create a file you must first open a file using the following syntax:</p>
+      <pre><span style="font-size: 12pt;">filehandle = open("filename.txt", 'w')</span></pre>
+      <p>The <em><strong>filehandle</strong> </em>is the variable that is used to access/reference all the functions related to managing that file. The
+        function&nbsp;<em><strong>open</strong> </em>is used to create the file. Files that are created for <em><strong>writing</strong> </em>will be empty to begin. If there is a
+        file with the same name, then <strong>that file will be deleted when the command is used</strong>!</p>
+      <p>The first parameter to the function is "filename.txt", which is a <strong>string</strong>&nbsp;for&nbsp;the filename on the disk/storage device. It is good idea to use the
+        .txt ending (also called an extension) to identify the file as a standard text file that can be read by programs such as notepad. The second parameter in the open
+        function&nbsp;<strong>"w"</strong> makes Python open the file so that it can store or write information.</p>
+      <p>Once the file handle, <em><strong>filehandle</strong></em>, is created, the file is open for writing. Writing to file involves using the command</p>
+      <pre><span style="font-size: 12pt;">filehandle.write("text to write")</span></pre>
+      <p>You may use the write command as many times as necessary. The file must be <strong>closed</strong> to make it usable. The command to close the file is</p>
+      <pre><span style="font-size: 12pt;">filehandle.close()</span></pre>
+      <p>Below is an example of a program that uses these commands</p>
+
+      <pre class=code># Writing information to a file
+# ICS2O Unit 5, Activity 2
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# get data to store in file
+name = input ("Enter your name: ")
+# create file handle and open the file named testFile.txt, for writing
+filehandle = open("testFile.txt",'w')
+# write to the file
+filehandle.write(name)
+# close the file
+filehandle.close()</pre>
+
+      <p>It is important to notice the use of the dot command structure - the <em><strong>filehandle.write()</strong></em> and <em><strong>filehandle.close()</strong></em> type of
+        commands. This structure means that the <em><strong>write()</strong></em> and <em><strong>close()</strong></em> are connected to the file handle created in the open
+        function. If you created a second file, you could use those commands, but they would relate only to that new filehandle.</p>
+      <p>You can use the write command to write as many times as you would like.</p>
+
+      <pre class=code># Writing information to a file
+# ICS2O Unit 5, Activity 2
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# create file handle and open testFile.txt, for writing
+filehandle = open("testFile.txt",'w')
+print ('Writing to the file.')
+# creating a loop for input
+for i in range (1,100):
+    # write to the file
+    # must convert the integer i to a string.
+    # also must add the new line to the output.
+    filehandle.write(str(i)+'\n')
+print ('Finished creating the file')
+# close the file
+filehandle.close()</pre>
+
+      <p>Notice that the above program converts the integer i to a string and adds a new line to the line of text being written to the file. The write command will only accept text
+        (i.e. strings or characters) and does not start a new line on its own. You must convert numbers to strings and put the end code (usually&nbsp;a new line) yourself.</p>
+      <p>So where is the file that you created? Using the configuration we are currently using, the file will be saved in the same directory as your python code. To view the file
+        contents you&nbsp;can open the file in Notepad by 'exploring' to the workspace directory under your user space, or refreshing the pydev Project Explorer.</p>
+      <h4>Retrieving Data</h4>
+      <p>Opening a file to read is similar to opening a file to write. The command is</p>
+      <pre>fileHandle = open ("filename.txt", 'r')</pre>
+      <p>There are three ways of handling the reading in of the data from a file in Python. It is important to&nbsp;select the method&nbsp;that is most appropriate for the
+        circumstance.</p>
+      <ol>
+        <li><tt>fileHandle.read()</tt>&nbsp;The command will read and input the whole file all at once.</li>
+        <li><tt>fileHandle.read(numberOfCharacters)</tt>&nbsp;The command will read the number of characters specified as the parameter (the number inside the brackets).</li>
+        <li><tt>fileHandle.readline()</tt>&nbsp;The command will read one line of the file at a time.</li>
+      </ol>
+      <p>Regardless of the method used, at the end of the process you must close the file using the command</p>
+      <pre>filehandle.close()</pre>
+
+      <h5>Method #1: Reading the entire file</h5>
+      <p>It is possible to read in all of text file in one command. Using a string variable, <em><strong>contents</strong></em>, the command to input the whole file into the
+        variable is</p>
+      <pre>contents = fileHandle.read()</pre>
+      <p>The following program is an example of this method of reading a file.</p>
+
+      <pre class=code># Reading all the contents of a file
+# ICS2O Unit 5, Activity 2
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# opens the file to read - this file must already exist
+inFile = open("testfile.txt",'r')
+# reads the file contents into the string variable contents
+contents = inFile.read()
+# outputs the file contents
+print (contents)
+inFile.close()</pre>
+
+      <h5>Method #2: Reading a number of characters</h5>
+      <p>Python permits the reading of a specific number of characters at a time. This is done by using the command</p>
+      <pre>content = fileHandle.read(num) </pre>
+      <p>where num is an <strong>integer</strong>. This command can be used to read a single character at a time, or a file in which the text is formatted into fixed length
+        fields.&nbsp;</p>
+
+      <pre class=code># Reading the contents of a file, one character at a time
+# ICS2O Unit 5, Activity 2
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# Opens the file to read - this file must already exist
+inFile = open("testfile.txt", 'r')
+# reads the file contents into the variable
+content = inFile.read(1)
+# Outputs the file contents one character at a time
+while contents != '':
+     if contents !='\n':
+          print (contents)
+     contents = inFile.read(1)
+inFile.close()</pre>
+
+      <h5>Method #3: Reading one line at a time</h5>
+      <p>Reading files line by line is done by using the command</p>
+      <p><tt>line = fileHandle.readline()</tt></p>
+      <p>This command needs to be used to read each line of a file. An example of this usage follows.</p>
+
+      <pre class=code>Reading the contents of a file, one character at a time
+# ICS2O Unit 5, Activity 2
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# opens the file to read - this file must already exist
+inFile = open("testfile.txt", 'r')
+# reads the first line of the file into a variable
+line = inFile.readline()
+# outputs the file contents
+while line != '': #check for the end of the file
+     # the newline (\n) is included in the line from the file.
+     # it needs to be accounted for when printing
+     # or evaluating the string
+     print (line.strip('\n'))
+     # the next line is read
+     line = inFile.readline()
+inFile.close()</pre>
+
+      <p>There are other ways to use Python to read and write files, however these are the most straightforward. You may wish to consider using files in your final project (RST)
+      </p>
+
+      <h3>Evidence of Learning</h3>
+
+      <hr />
+      <h4 class="h4_assignment_title"><img class="icon" src="../resources/images/dropbox.gif" />Programming Exercises</h4>
+
+      <div class="dropbox">
+        <p>Save the following programs in the <strong>activity2</strong> package of your Unit 5 Python Project.</p>
+
+        <ol>
+          <li>Create a program that will accept a multiple choice question, four answers, and the letter of correct answer. This will be six lines, and then store the questions in
+            the file <strong>questions.txt</strong>. Name your program <strong>Q1Questions.py</strong></li>
+          <li>Create a second program that will read the file <strong>questions.txt</strong>, formatted as described above, and pose the questions to the user. The program will
+            keep score of the number of questions answered correctly. Name this program <strong>Q2Quiz.py</strong></li>
+        </ol>
+
+      </div>
+    </div>
+  </body>
+
+</html>

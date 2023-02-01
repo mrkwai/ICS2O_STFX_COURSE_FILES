@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta property="og:title" content="Activity 1: Manipulating Text">
+    <title>Activity 1: Manipulating Text</title>
+    <link href="../resources/course_techno.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header"><img class="logo" src="../resources/images/STFX Logo.png" />
+        <div class="courseTitle">ICS2O: Introduction to Computer Studies, Grade 10, Open</div>
+
+        <h1>Unit 5: Advanced Programming Concepts</h1>
+
+        <h2>Activity 1: Manipulating Text</h2>
+      </div>
+
+      <h3>String data type</h3>
+
+      <hr />
+      <p>The String (<strong>str</strong>) data type has many features, and can be manipulated in many different ways. Strings, a collection of characters, take up the most memory
+        space of any variable, and are among the most common and useful variables in programming. There are a number of features that are available to manipulate the size of the
+        string, the contents of the string, accept a user&#39;s input as a string, convert the content of a string to other data types and even to combine, remove or find portions
+        of strings within other strings.</p>
+
+      <h4>ASCII Characters</h4>
+
+      <p>These characters in a string are treated as numbers (ASCII numbers) by the computer. As seen in the CS Circles tutorials, ASCII Characters are a set of characters that are
+        available on most computers by deliberate design. ASCII stands for American Standard Code for Information Interchange. There are 256 predefined ASCII characters, 128 of
+        which are used for standard characters.. Each character is represented by a decimal number from 0 to 255. A listing of these characters can be found at <a
+          href="https://www.ascii-code.com/" rel="noopener noreferrer" target="_blank">https://www.ascii-code.com/</a>. A look at this table will quickly reveal that there are more
+        characters than are regularly used. It will also reveal that the capital or uppercase letters have different <strong>codes </strong>than the lowercase ones.</p>
+
+      <p>ASCII characters that are not on the keyboard can be displayed by using the <strong>chr(characterNumber) </strong>command. One way to use this command is with a
+        <strong>print()</strong> statement. For example:</p>
+
+      <pre>
+print(chr(214) + &quot; &quot; + chr(214))
+</pre>
+
+      <p>will display</p>
+
+      <p>&Ouml; &Ouml;</p>
+
+      <p>Note that the <strong>chr()</strong> command must be used with a <strong>print()</strong> statement or assigned to string variable. In other words, you can create a string
+        variable called <em><strong>word</strong></em> that would contain a single character &quot;&Ouml;&quot;</p>
+
+      <pre>
+word = chr(214)
+</pre>
+
+      <p>The ASCII number of a character can be obtained using the function <strong>ord</strong>(<strong>character)</strong>. ASCII values are integers so the results of the
+        function <strong>ord()</strong> can also be stored in an int. So given the int variable <strong><em>asciiNum</em></strong>, this command will store the value 35 in
+        <strong><em>asciiNum</em></strong>.</p>
+
+      <pre>
+asciiNum = ord(&quot;#&quot;)</pre>
+
+      <p>The older version of the ASCII character set allowed the use of characters to create lines. While this aided in creating simple animations for early programs, the modern,
+        Windows based sets, hold multilingual characters that are more valuable in the widely used computer environments of today.</p>
+
+      <h4>Length of a String</h4>
+
+      <p>The number of characters in any string can be found using a the function <strong>len()</strong>. The function <strong>len()</strong> returns an <strong>int</strong>, which
+        can be assigned to a variable or used where a number is expected, such as a print statement or a for loop. The following are examples of these usages:</p>
+
+      <div class=" ">
+        <pre>
+# Example 1
+# len is assigned to a variable
+word = input(&quot;Enter a word: &quot;)  # input
+howLong = len(word)
+print (&quot;The word, &quot; + word + &quot;, is&quot;, howLong, &quot;characters long.&quot;)
+
+# Example 2
+# len is used in a print statement
+word = input(&quot;Enter a word:  &quot;)  # input
+print (&quot;The word, &quot; + word + &quot;, is&quot;, len(word), &quot;characters long.&quot;)</pre>
+      </div>
+
+      <h4>String Arithmetic</h4>
+
+      <p>Strings can be added on to other strings. This process is called <strong>concatenation</strong>. Given the string variables <strong>str1</strong>, <strong>str2</strong>,
+        <strong>str3</strong>, <strong>str4</strong>, where str1= &quot;This&quot;, str2= &quot;is&quot;, and str3= &quot;a test.&quot; the string str4 can be assigned using the
+        following command:</p>
+
+      <pre>
+str4 =  str1 + &quot; &quot; + str2 + &quot; &quot; + str3</pre>
+
+      <p>Typing <strong>print(str4)</strong> will output <strong>This is a test.</strong></p>
+
+      <p>This is similar to the way output can be controlled in the <strong>print()</strong> statements, however, you cannot add other data types into a string without converting
+        them first. The advantage to using this is that a string can be assembled from parts and output in a single variable. Also, a string can be assembled from parts of other
+        strings.</p>
+
+      <p>The following program demonstrates some of the string functions introduced so far:</p>
+
+      <pre class="code">
+# String functions
+# This program changes lowercase letters to uppercase
+# ICS2O Unit 5, Activity 1
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# Variables
+wordsUpper = &quot;&quot;
+
+# Input
+wordsInput = input(&quot;Enter a line of text:  &quot;)
+
+# Processing
+for i in range (0, len(wordsInput)):
+
+    # User may give a mix of lower and uppercase, this variable will hold
+    # 32 when the character is lowercase, and 0 when it is uppercase
+    lowerToUpper = 0
+
+    #get the ascii code for the current letter
+    asciiNumber = ord(wordsInput[i])
+
+    # If the ASCII value of the letter is greater than 96
+    # but less within the range of lowercase letters (97-122)
+    if asciiNumber &gt; 96 and asciiNumber &lt; 123:
+        # then lowerToUpper will be set to the difference between
+        # the value of an uppercase letter and the lowercase letter
+        lowerToUpper = 32
+    # Adds each letter to the string, shifting the ascii value if needed
+    wordsUpper = wordsUpper + chr(asciiNumber - lowerToUpper)
+
+# Output
+print (&quot;The inputted text in capitals is: &quot;, wordsUpper)
+</pre>
+
+      <h4>Partial Strings</h4>
+
+      <p>Accessing partial strings from a string variable is the ability to access one or more characters from the contents of a string variable. Python treats strings as a set of
+        characters, with an internal index for each character. Each string character is known by its location in the string. Using the string variable <strong>str4</strong> from
+        the String Arithmetic example we could visualize the string as follows:</p>
+
+      <table style="width: 521px;">
+        <tbody>
+          <tr>
+            <td><tt>str4</td>
+            <td style="width: 90px; text-align: center;"><tt>T</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>h</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>i</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>s</tt></td>
+            <td style="width: 90px; text-align: center;">&nbsp;</td>
+            <td style="width: 90px; text-align: center;"><tt>i</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>s</tt></td>
+            <td style="width: 90px; text-align: center;">&nbsp;</td>
+            <td style="width: 90px; text-align: center;"><tt>a</tt></td>
+            <td style="width: 90px; text-align: center;">&nbsp;</td>
+            <td style="width: 90px; text-align: center;"><tt>t</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>e</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>s</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>t</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>.</tt></td>
+          </tr>
+          <tr>
+            <td><tt>index</td>
+            <td style="width: 90px; text-align: center;"><tt>0</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>1</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>2</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>3</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>4</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>5</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>6</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>7</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>8</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>9</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>10</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>11</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>12</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>13</tt></td>
+            <td style="width: 90px; text-align: center;"><tt>14</tt></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Any character in the string variable can be accessed by writing its index number in square brackets after the variable name. In a print statement, this might look like:
+        <strong>print(str4[0])</strong>. The output would be &quot;T&quot;. The statement <strong>print(str4[12])</strong> would output &quot;s&quot;.</p>
+
+      <p>To create partial strings indicate the part of the string to be outputted in brackets using a colon between the first and last index numbers of the sub-string. For
+        example, with the string variable str4 used in the string arithmetic example, the code: <strong>print(str4[0:6])</strong>. would output &quot;<strong>This i</strong>&quot;
+        To access the last character you can use <strong>len(str4)</strong>. For example <strong>print(str4[8:len(str4)]</strong> would output: &quot;<strong>a test.</strong>&quot;
+      </p>
+
+      <h4>Comparing Strings</h4>
+
+      <p>Python treats strings in a special way when used in a comparison statement like a while condition. The evaluation of characters is not based on the letters, or on any
+        combination of the letters. Rather, the letters are each treated as individual numbers using their ASCII codes. Thus it is possible to compare strings using &gt; and &lt;
+        operators.</p>
+
+      <p>Python compares the character in index 0 in each word, then the character in index 1, then index 2, and so on, until the comparison fails. The rest of the word is ignored.
+      </p>
+
+      <p>To observe how this works, try copying the following code into Eclipse. Then, try&nbsp;changing the values of str1 and str2 to gain a better understanding of string
+        comparison.</p>
+
+      <div class="code">
+        <pre>
+# String Comparison Demonstration
+
+str1 = &quot;test&quot;
+str2 = &quot;vest&quot;
+
+print(&quot;Is&quot;, str1, &quot;&gt;&quot;, str2 + &quot;? Answer:&quot;, str1 &gt; str2)
+print()
+print(&quot;Is&quot;, str1, &quot;&lt;&quot;, str2 + &quot;? Answer:&quot;, str1 &lt; str2)</pre>
+      </div>
+
+      <h4>Find</h4>
+
+      <p>The <strong>str.find(str)</strong> function allows the programmer to search a string for a certain pattern in a string. The function will return the first index location
+        where the pattern exists. For example, the code:</p>
+
+      <pre>
+word = &quot;pattern&quot;
+location = word.find(&quot;at&quot;) </pre>
+
+      <p>will result in a value of 1 being placed in <strong>location</strong>.</p>
+
+      <h3>Evidence of Learning</h3>
+
+      <hr />
+      <h4 class="h4_assignment_title"><img alt="Assignment Icon" class="icon" src="../resources/images/survey.gif" />Task #1 - True or False?</h4>
+
+      <div class="dropbox">
+        <p>Understanding how comparison operators work in programming is an essential skill.</p>
+
+        <p>Test your understanding of String comparison using this <a href="https://forms.gle/BLmJqaha7qthLgCSA" target=_blank>Google Form</a>.</p>
+      </div>
+
+      <h4 class="h4_assignment_title"><img alt="Assignment Icon" class="icon" src="../resources/images/dropbox.gif" />Programming Exercises</h4>
+
+      <div class="dropbox">
+        <p>Save the following programs in the <strong>activity1</strong> package of your Unit 5 Python Project. (You may need to revisit Unit 4, Activity 1 to recall how to get the project into Eclipse from your online repository!)</p>
+
+        <ol>
+          <li>Create a program that will accept a word from a user and return the length of that word. Make this program in a loop with option to exit when the use types in quit.
+            Name the program <strong>Q1Length.py.</strong></li>
+          <li>Create a program that will accept a word and output the word one letter at a time in reverse. Name the program <strong>Q2Reverse.py</strong></li>
+          <li>Create a program that will prompt the user for a word, and return a &#39;word triangle&#39;. For example, if the user types in the word &quot;PYTHON&quot;, your
+            program will output:<br />
+            P<br />
+            PY<br />
+            PYT<br />
+            PYTH<br />
+            PYTHO<br />
+            PYTHON<br />
+            Name the program <strong>Q3WordTriangle.py</strong>.</li>
+        </ol>
+
+      </div>
+    </div>
+  </body>
+
+</html>

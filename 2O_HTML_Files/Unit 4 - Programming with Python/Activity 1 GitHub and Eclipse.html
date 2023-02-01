@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta property="og:title" content="Activity 1: GitHub and Eclipse">
+    <title>Activity 1: GitHub and Eclipse</title>
+    <link href="../resources/course_techno.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header"><img class="logo" src="../resources/images/STFX Logo.png" />
+        <div class="courseTitle">ICS2O: Introduction to Computer Studies, Grade 10, Open</div>
+
+        <h1>Unit 4: Programming with Python</h1>
+
+        <h2>Activity 1: GitHub and Eclipse</h2>
+      </div>
+
+      <h3>Developer Tools: GitHub and Eclipse</h3>
+
+      <hr />
+
+      <h4>GitHub</h4>
+
+      <p><strong>Git</strong> is a distributed version control system that allows developers to track changes to their code, create backups and share their code in a team
+        environment. <strong>GitHub</strong> is a web service that hosts Git repositories, plus many developer tools to aid in creating software projects.</p>
+
+      <p>We will be using GitHub, GitHub Classroom and EGit (part of the eclipse IDE) during this course to create and share assignment repositories. Each student will have a
+        private repository for the activities and assignment associated with the programming unit as well as their RST.</p>
+
+      <table class="picturetable">
+        <tr>
+          <th><img class="icon" src="images/GitHubLogo.jpg" alt="GitHub Logo" /></th>
+          <td>
+            <ul>
+              <li>If you haven't already, <strong>create an account for yourself on <a href="https://github.com/join" target="_blank">GitHub.com</a></strong>.<br /><em>When
+                  prompted, choose the <strong>FREE</strong> plan.</em></li>
+
+              <li>To learn some of the basics of GitHub, <a href="https://guides.github.com/activities/hello-world/" target="_blank">follow these instructions on the GitHub Guides
+                  website.</a></li>
+
+              <li>For extra practice, authorize <a href="https://lab.github.com/" target="_blank">GitHub Learning Labs</a> to work with your Github account.<br />Enroll in the
+                following courses to practice some new skills!</li>
+              <ol>
+                <li><a href="https://lab.github.com/githubtraining/introduction-to-github" target="_blank">Introduction to GitHub</a></li>
+                <li><a href="https://lab.github.com/githubtraining/managing-merge-conflicts" target="_blank">Managing merge conflicts</a></li>
+                <li><a href="https://lab.github.com/githubtraining/communicating-using-markdown" target="_blank">Communicating using Markdown</a></li>
+              </ol>
+
+            </ul>
+
+          </td>
+        </tr>
+      </table>
+
+      <h4>The Eclipse IDE (Integrated Development Environment)</h4>
+
+
+      <p>Eclipse is a program used by many professional programmers, and in many colleges and universities to train people in programming. It was first designed to program Java. It
+        is a very flexible and powerful program that can now be used to program in many different programming languages.It can be used to program in C, C++, C# and other languages
+        as well as Python by adding available modules to the program. Eclipse is free to download and open-source, which means that anyone can view the code used to create it.</p>
+
+      <table cellpadding="5" class="picturetable" summary="This table is for formatting purposes." width="95%">
+        <tbody>
+          <tr>
+            <th>
+              <p><img height="35" src="images/eclipse.png" width="149" /></p>
+
+              <p><img alt="Python Logo" height="66" src="images/python_logo.png" title="Python Logo" width="196" /></p>
+            </th>
+            <td>
+              <p>Eclipse is one of many software applications that are to used to develop programs. These applications are called Integrated Development Environments or IDEs. IDEs
+                have a history of their own. Most IDEs contain a text editor to edit the file, a file explorer to organize the source code (the files that contain the programming
+                code) into projects, and various other features that help a developer write programs.</p>
+
+              <p>Usually IDEs also either connect to or provide a compiler, allow the developer to trace their code one line at a time, and provide context sensitive help. Eclipse
+                provides a number of features that we will explore of the next few pages.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="colourbox2">Eclipse and Python should be installed on your school workstation. However, you will need to <strong>add the plug-in and configure the
+          interpreter</strong>.<br />
+        <br />
+        If you are on a school computer, follow the directions below for <strong>Step 4 ONLY.</strong> If there are any issues, tell me immediately.</div>
+
+      <h4>Step 1: Download &amp; Install Python</h4>
+
+      <ul>
+        <li>Download Python 3.x from <b><a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></b>.</li>
+        <ul>
+          <li>You must select the correct version for your own computer.</li>
+        </ul>
+        <li>The following steps are what I use, however your computer may be different!</li>
+        <ul>
+          <li>Right-click on the file and select <strong>Run as administrator</strong></li>
+          <li>Check the box <strong>Add Python 3.x to PATH</strong></li>
+          <li>Choose <strong>Customize installation</strong></li>
+          <li>Under <strong>Advanced Options</strong>, check <strong>Install for all users</strong></li>
+          <li>Complete the installation process, taking the default values</li>
+        </ul>
+      </ul>
+
+      <h4 id="InstallEclipse">Step 2: Download &amp; Install Eclipse</h4>
+
+      <ul>
+
+        <li>Visit the <strong><a href="https://www.eclipse.org/downloads/packages/installer" target="_blank">Eclipse Installer page</a></strong> and follow the steps provided.</li>
+        <ul>
+          <li>Make sure you select the version that is appropriate for your computer</li>
+          <li>When prompted, choose <b>Eclipse IDE for Java Developers</b> (this is the most 'basic' version - we will add the python plug-in later)</li>
+        </ul>
+      </ul>
+
+      <!-- <h4>Step 2: Download &amp; Install Java</h4>
+      <p>Eclipse requires Java 8 to run properly; if you have an older version of Java (or do not have Java installed) follow these steps:</p>
+      <ul>
+        <li>Download Java 8 from <strong style="font-size: 1em;"><a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank"
+              rel="noopener noreferrer">The Oracle Website</a></strong>.</li>
+        <ul>
+          <li><i>Note: You will need to create an Oracle Account to access the JDK. Please use the <a href="http://shh.ocsb.ca/" target=_blank>school contact information</a> when contact information is required.</i></li>
+        </ul>
+        <li>Right-click on the file and select <strong style="font-size: 1em;">Run as administrator</strong></li>
+        <li>Follow the installation instructions, taking all the default values</li>
+      </ul>
+
+
+      <h4>Step 3: Download &amp; Unzip Eclipse</h4>
+      <ul>
+        <li>Download Eclipse, from the <strong><a href="http://www.eclipse.org/downloads/eclipse-packages/" target="_blank">Eclipse download page</a></strong>.</li>
+        <ul>
+          <li>Choose <b>Eclipse IDE for Java Developers</b></li>
+          <li>Select the version that is appropriate for your computer</li>
+        </ul>
+        <li>Once downloaded, <strong style="font-size: 1em;">unzip the file</strong></li>
+        <li><strong style="font-size: 1em;">Move</strong>the eclipse folder to <strong style="font-size: 1em;">C:\Program Files\</strong> or
+          another appropriate applications folder</li>
+        <li>Right click on eclipse.exe and select <b>Pin to Taskbar</b>, <b>Pin to Start</b>, or <b>Send to - Desktop (create shortcut)</b> to create a shortcut</li>
+        <li>Once you start Eclipse, the program will ask you to create a <strong>workspace</strong>.</li>
+          <ul>
+            <li>You can create the workspace in the default location, or choose a location where you normally keep your school files.</li>
+          </ul>
+      </ul> -->
+
+      <p>Once Eclipse has started the first time it will look like the following:</p>
+
+      <p><img width=500 src="images/A1Welcome.jpg" /></p>
+
+      <h4>Step 3: Install PyDev</h4>
+
+      <p>Finally, to program with the Python language in Eclipse, you will need the <strong>PyDev</strong> plug-in.<br />
+        To install Pydev:</p>
+
+      <ul>
+        <li>In Eclipse, select <strong>Help ... Eclipse Marketplace </strong>from the top menu Select</li>
+        <li>Search for &quot;<strong>Pydev</strong>&quot;</li>
+        <li>Click <strong>install</strong> and follow the installation instructions.</li>
+      </ul>
+
+      <h4>Step 4: Configure the Interpreter</h4>
+
+      <p>Once Pydev has installed, you must <strong>configure the interpreter</strong>:</p>
+
+      <p><img width=500 src="images/A1AutoConfig.jpg" /></p>
+
+      <ul>
+        <li>In Eclipse, select <strong>Window ... Preferences </strong>from the top menu</li>
+        <li>Navigate to<strong> PyDev -&gt; Interpreters -&gt; Python Interpreter</strong></li>
+        <li>Click the button <strong>Quick Auto-Config</strong>, or (newer version) <strong>New - Choose from list</strong>, then click OK</li>
+        <ul>
+          <li>If the interpreter is not found, you will need to search for it manually. The default located for installation may be something like <i>C:\Users\*******\AppData\Local\Programs\Python\Python39</i></li>
+          <li>See me for help if you run into issues here!</li>
+        </ul>
+      </ul>
+
+      <p>Programming in Eclipse requires that you create a project, and within the project create a Python module, within a package (like a folder). The module file will open when
+        you create it and you will then be able to type your commands for your Python programs.</p>
+
+      <p>All the programming exercises in this unit will be completed in the same project, organized into packages for each activity</p>
+
+      <h4>The Eclipse Workbench</h4>
+
+      <p>The Eclipse Workbench consists of three main components: <strong>Perspectives</strong>, <strong>Views</strong> and <strong>Editors</strong></p>
+
+      <ul>
+        <li><strong>Perspectives</strong>
+
+          <ul>
+            <li>A group of views and editors</li>
+            <li>Multiple perspectives can exists in a single Workbench Window</li>
+            <li>You can customize a perspective to your workflow needs, or reset it back to its default layout</li>
+            <li>Can be chosen from the buttons at the top right of your screen (text optional): <img alt="Perspective toolbar" src="images/A1Perspective.jpg"
+                style="max-width: 100%;" title="Perspective toolbar" /></li>
+            <li>We will be using the following perspectives in this course:
+              <ul>
+                <li><strong>Pydev</strong> (for creating and editing code)</li>
+                <li><strong>Debug</strong> (for tracing and debugging code)</li>
+                <li><strong>Git</strong> (for working with your GitHub repository)</li>
+              </ul>
+            </li>
+            <li>Each perspective has its own <strong>toolbar</strong>, that you can customize to your needs (<strong>right click</strong> on the perspective button &amp; select
+              <strong>customize</strong> ...)</li>
+          </ul>
+        </li>
+        <li><strong>Views</strong>
+          <ul>
+            <li>A visual component within the Workbench</li>
+            <li>Used to navigate a list or hierarchy of information, or display properties for the active editor</li>
+            <li>Each perspective has a set of views it includes by default, but you can always add your own!
+              <ul>
+                <li>Select <strong>Window</strong> &gt; <strong>Show View</strong> and choose the view you want to add to your perspective</li>
+                <li>You can move the views around as needed on your screen by dragging &amp; dropping the view tab</li>
+              </ul>
+            </li>
+            <li>Some of the views that we will be using:
+              <ul>
+                <li><strong>Package Explorer</strong>: To organize your projects, packages &amp; modules</li>
+                <li><strong>Console</strong>: To provide user input &amp; view program output</li>
+                <li><strong>Git Repositories</strong>: To clone and manage your assignment repositories</li>
+                <li><strong>Git Staging</strong>: To stage, commit &amp; push your source code files to your Git repository</li>
+                <li><strong>History</strong>: To view your history of commits</li>
+                <li><strong>Variables</strong>: While debugging, view the contents of your program variables as you step through your code</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><strong>Editors</strong>
+          <ul>
+            <li>Allows you to view &amp; edit source code files (*.py), text files (*.txt), html files, or any other standard Unicode/ASCII file.</li>
+            <li>Can have multiple editors open at one; you will see tabs with the filename for each</li>
+            <li>A star <strong>(*)</strong> means that the contents of the editor has been changed, but not saved</li>
+            <li><strong>ctrl-s</strong> saves the content of the current editor, <strong>ctrl+shift+s</strong> saves the contents of all editors</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Git Repositories</h4>
+
+      <p>The following image shows the various commands that you will need to work with GIT for your activities and assignments:</p>
+
+      <p><img alt="GIT workflow" src="images/A1GITworkflow.jpg" title="GIT workflow" /></p>
+
+      <p>The most important actions are <strong>clone/import</strong>, <strong>pull</strong>, and <strong>commit/push</strong>.</p>
+
+      <h5 id="CloneImport">Clone/Import</h5>
+
+      <p>To <strong>clone</strong> a repository means to create a local copy of the remote repository (hosted on GitHub) onto your local computer. This creates both the
+        <strong>local repository</strong> (which tracks changes) as well as the <strong>working directory</strong> that contains your files. Once this is done you can
+        <strong>import</strong> your project into Eclipse.</p>
+
+      <p><strong>Cloning/Importing</strong> involves these steps:</p>
+
+      <ol>
+        <li>Obtain the URL for your repository from the GitHub website and copy it to the clipboard.<br />
+          <img alt="Clone Git Repository" src="images/A1GitClone_annotated.jpg" title="Clone Git Repository" /></li>
+        <li>In Eclipse, select <strong>File ... Import</strong></li>
+        <li>Select <strong>Git ... Projects from Git</strong></li>
+        <li>Choose <strong>Clone URI</strong></li>
+        <li>The next screen should already be populated with your repository information. Enter your GitHub username and password in the <b>Authentication</b> area. Select <b>Store
+            in Secure Store</b> (when prompted, choose <b>no</b> for creating recovery questions)</li>
+        <li>In the "Branch Selection" screen, clear the checkbox for the feedback branch. One the <b>master</b> branch should be selected.<br />
+          <img alt="Select Master Branch" src="images/A1MasterBranch.jpg" title="Select Master Branch" /></li>
+        <li>In the "Local Destination" screen, you can accept the default directory</li>
+        <li>Under "Wizard for project import", choose <b>Import existing Eclipse projects</b><br />
+          <img alt="Select Master Branch" src="images/A1ImportExisting.jpg" title="Select Master Branch" /></li>
+        <li>Click Finish</li>
+        <li>Once your project has imported completely, <b>rename your project </b> (<b>F2</b> or right click Refactor ... Rename) to include your last name (Format:
+          <b>Lastname_ICS2O_Unit4 </b>).</li>
+        <li><b>Click <a href="https://drive.google.com/file/d/13uhiEgqGPnd3iqjTHNH2nfBoB1ys-X92/view" target=_blank>HERE</a> for a step by step video of the clone/import
+            process.</b></li>
+        <iframe src="https://drive.google.com/file/d/13uhiEgqGPnd3iqjTHNH2nfBoB1ys-X92/preview" allowfullscreen=true></iframe>
+      </ol>
+
+
+      <p>Once your have completed these steps, you should have a copy of the project stored on your computer. <b>You will need to complete this process for every computer that you
+          will use for this course</b>.</p>
+
+      <h5 id="CommitPush">Commit/Push</h5>
+
+      <p>Once you have made some changes to your project, you will want to add those changes to your remote repository. This serves as a backup of your work, allows your teacher
+        to
+        view and assess your work, and gives you the freedom to work from multiple computers. This process involves 3 steps: <strong>staging</strong>,
+        <strong>committing</strong>,
+        and <strong>pushing</strong>.</p>
+
+      <ol>
+        <li>To <b>stage</b> your work means that you are preparing to put your changes to the local repository.
+          <ul>
+            <li>This can be done using the <strong>Git Staging</strong> view, found in the <strong>Git</strong> perspective.</li>
+            <li>Once your files have been modified, they should appear in the &quot;Unstaged Changes&quot; window.</li>
+            <li>Add your files to the index (or Staged Changes list) by dragging and dropping, using the green plus signs, or right click and select <strong>Add to Index</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><img alt="Git staging view" data-d2l-editor-default-img-style="true" src="images/A1GitStaging.jpg" title="Git staging view" /></p>
+
+      <ol start="2">
+        <li>Once your changes have been staged, they are ready to be <b>committed</b> (to the local repository) and <b>pushed</b> (to the remote repository).
+          <ul>
+            <li>You MUST include a commit message every time you commit!
+              <ul>
+                <li>If you can&#39;t think of a message, ask yourself &quot;Why is it important that I commit right now?&quot;</li>
+              </ul>
+            </li>
+            <li>Once your comment is entered, select <strong>Commit and Push ...</strong></li>
+          </ul>
+        </li>
+      </ol>
+
+      <p><img alt="Git staging part 2" src="images/A1GitStaging2.jpg" title="Git staging part 2" />
+      </p>
+
+      <ol start="3">
+        <ul>
+          <li>
+            Keep in mind that <strong>Commit</strong> writes your changes to your <em>local</em> repository, while <strong>Push</strong> writes the changes to the <em>remote</em>
+            repository (GitHub). For now, we will do both actions together.
+          </li>
+          <li>
+            If you accidentally click the wrong button, you can always issue a push command by right-clicking on your repository in the <strong>Git Repositories</strong> view and
+            selecting <strong>Push</strong> from the context menu.
+          </li>
+        </ul>
+        <li>
+          <b>Click <a href="https://drive.google.com/file/d/1hKYNDYxmism_Q0KVmJ05-z-nP_MkLnCf/view" target=_blank>HERE</a> for a step by step video of the commit/push process.</b>
+        </li>
+        <iframe src="https://drive.google.com/file/d/1hKYNDYxmism_Q0KVmJ05-z-nP_MkLnCf/preview" allowfullscreen=true></iframe>
+
+      </ol>
+
+      <h4 id="Pull">Pull</h4>
+
+      <p>When you switch between computers (home and school) it is <strong>CRITICAL that every coding session begin with a &quot;Pull&quot; command</strong>. This ensures you are
+        always working on the latest version of your code.</p>
+
+      <ol>
+        <li>
+          To issue a pull command, in the <strong>Git Repositories</strong> view, <strong>right click</strong> on your repository and select <strong>Pull</strong> from the context
+          menu
+        </li>
+      </ol>
+
+      <p><img alt="Git pull command" src="images/A1PullCommand.jpg" title="Git pull command" /></p>
+
+      <ol start="2">
+        <li>
+          <b>Click <a href="https://drive.google.com/file/d/1eWeVHDX2J_bPhrWN7oH03SfxPhsW2BFZ/view" target=_blank>HERE</a> for a step by step video of the pull process</b>
+        </li>
+        <iframe src="https://drive.google.com/file/d/1eWeVHDX2J_bPhrWN7oH03SfxPhsW2BFZ/preview" allowfullscreen=true></iframe>
+      </ol>
+
+
+
+      <h5>Programming errors</h5>
+
+      <p>While working through the CSCircles activities, you likely encountered a number of different <strong>errors</strong>: times when you thought that your instructions would
+        be well understood by the computer, only to find out that they were not. In general, there are 3 types of programming errors:</p>
+
+      <table cellpadding="5" class="picturetable" summary="This table is for formatting purposes." width="95%">
+        <tbody>
+          <tr>
+            <th>
+              <p><img alt="Debug Comic" height="418" src="images/A1Debug_comic.jpg" title="Debug Comic" width="295" /><br />
+                <div class="caption">Debugging comic</div>
+              </p>
+            </th>
+            <td>
+              <p><strong>1) Syntax:</strong> Syntax is the &#39;grammar&#39; of the interpreter or compiler. Usually Eclipse catches these errors and your program will not run with
+                these errors present. Missing brackets, improper indentation, not enough or too many arguments being passed to a function - these are all examples of syntax errors.
+                Syntax errors are relatively easy to fix, since most IDEs aid you in finding and correcting them.</p>
+
+              <p><strong>2) Run-time:</strong> run time errors happen when the program is running, but something goes wrong and the computer is not prepared for it. A common
+                example in Python is accepting a user&#39;s input in a math calculation without converting the input to an int or float. Another example would be allowing the user
+                to enter a number that is used as a divisor for a division problem, and the user enters 0. Since division by zero is undefined, this would result in a run-time
+                error.</p>
+
+              <p>In Eclipse, run time errors cause a &quot;Traceback&quot;, which appears in red text in the console, which proves information to help you locate which line of code
+                cause the error to happen.</p>
+
+              <p><strong>3) Logical:</strong> Logical errors are the most difficult to find and fix; they happen when the code runs with no issues, only the results are not what
+                they should be. Careful testing of a variety of inputs will help to reveal logical errors, and a good debugging environment will help to locate what part of the
+                code is causing them.</p>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table cellpadding="5" class="picturetable" summary="This table is for formatting purposes." width="95%">
+        <tbody>
+          <tr>
+            <td>
+              <p>Eclipse offers a <strong>perspective</strong> that is helpful for finding logical errors, called the &quot;<strong>Debug</strong>&quot; perspective. To open the
+                debug perspective, click the &quot;Open Perspective&quot; toolbar button at the upper right corner of Eclipse.</p>
+
+              <p>&nbsp;</p>
+
+              <p>A dialog box with a list of available perspectives will open;<br />
+                select <img alt="Debug" height="27" src="images/A1debug.jpg" title="Debug" width="77" /> from the list.</p>
+            </td>
+            <th>
+              <p><img alt="Open Perspective" height="172" src="images/A1openPerspective.jpg" title="Open Perspective" width="336" /><br />
+                <div class="caption">Open Perspective</div>
+              </p>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>When the Debug perspective opens, it should resemble this:</p>
+
+      <p><img alt="Debug Perspective" height="492" src="images/A1DebugPerspective.jpg" title="Debug Perspective" width="731" /></p>
+
+      <p>Notice that the screen is now divided into five different sections. The most important one is the &quot;Variables&quot; window in the upper right corner. This will allow
+        you to view the contents of all the variables in your program, as it is running.</p>
+
+      <p>Since computers run so quickly, we need to slow down the program execution to allow us to view the contents of our variables, and to observe the flow of our code. One way
+        to accomplish this is by using a <strong>breakpoint</strong>, which signals to the interpreter that code execution should stop at this point, and give the programmer the
+        option of &#39;stepping&#39; through the code, one line at a time.</p>
+
+      <p>To place a breakpoint in a program, find an executable line of code (not a comment or a whitespace line) and select <strong>Run -&gt; Toggle Breakpoint</strong>. A circle
+        should appear to the left of that line of code.</p>
+
+      <p>Instead of clicking the run button, click the <strong>debug </strong>button just beside it: <img alt="debug button" src="images/A1button.jpg" title="debug button" />. When
+        your program reaches the line with the breakpoint, the program will pause. You will be able to view the contents of your variables, and then either resume your code (run it
+        again, until it reaches another breakpoint) or step through one line at a time.</p>
+
+      <p>Here is a screenshot of a program in the middle of execution:</p>
+
+      <p><img alt="Debug Execution" height="724" src="images/A1DebugExecution.jpg" title="Debug Execution" width="730" /></p>
+
+      <p>The exercises in this unit can get complicated, and may require you to use the debug perspective to help find and resolve logical errors. Let me know if you run into any
+        problems using this! Once you are done debugging, you can return to the pydev perspective by clicking the python logo in the upper right corner of your screen.</p>
+
+      <p>The first program you will create is the Hello World program. This is a simple, one-line program that prints the message &quot;Hello World!&quot; to the screen.</p>
+
+      <h3>Evidence of Learning</h3>
+
+      <hr />
+      <h4 class="h4_assignment_title"><img alt="Assignment Icon" class="icon" src="../resources/images/checkmark_lg.gif" />Step by Step</h4>
+
+      <div class="dropbox">
+        <!-- <p><img alt="Drop Box" class="icon" src="../resources/images/dropbox.gif?" />Import the Unit 4 project from GitHub Classroom and create a <strong>Hello World</strong>
+          program in the activity 1 folder, as demonstrated by your teacher</p>
+
+        <p>Stage, commit &amp; push your code to GitHub, using a commit message to indicate when you are done</p> -->
+
+        <p>Now it&#39;s time to create your first Java Application! Follow these instructions carefully:</p>
+
+        <ol>
+          <li>Create a FREE account on <a href="https://github.com" target="_blank">GitHub.com</a> and <b>activate the account</b> (they will send you an email with an activation link!)</li>
+          <li>Follow the link on the Activity 1 Evidence Card to create your Unit 4 Repository. When prompted, give GitHub Classroom permissions on your repository.</li>
+          <li>Open Eclipse from the start menu (search bar), task bar, or desktop. If you don't have Eclipse installed, review the <a href="#InstallEclipse">steps outlined above</a></li>
+          <ul>
+            <li>Once you start Eclipse, the program will ask you to create a <strong>workspace</strong>.</li>
+            <li>Create the workspace in the default location, or a location of your choosing.</li>
+          </ul>
+          <li>Open the <strong>Pydev</strong> Perspective. You may need to install it from the Eclipse Marketplace</li>
+          <li><b>Clone/Import</b> your Unit 4 repository, following the <a href="#CloneImport">steps outlined above</a>.
+            <ul>
+              <li><b>Don't forget to rename your project!</b></li>
+              <li>You will need to repeat this step for each computer that you use (home/school)</li>
+            </ul>
+          </li>
+
+          <li>Inside this project, navigate to the <b>activity1 package</b></li>
+          <li>Inside this package, create a <b>new Pydev Module</b> (<strong>File </strong>&gt;<strong> New </strong>&gt;<strong> PyDev Module</strong>)</li>
+          <li>Create a simple Hello World program, as show by your teacher.</li>
+          <li>Save <img alt="Save button" src="images/A1Save.jpg" title="Save button" /> &amp; run <img alt="Run button" src="images/A1Run.jpg"  title="Run button" /> your program to ensure it works!
+          </li>
+          <li>Open the <strong>Git</strong> perspective to <b>stage your changes, commit and push</b> to your remote repository, following the <a href="#CommitPush">steps outlined above</a>.</li>
+          <li>Verify on <a href="http://github.com" target=_blank>GitHub.com</a> that your new code is there!</li>
+          <li>When you get home (or back to school), don't forget to <b>Pull</b> any new changes into your local repository, following the <a href="#Pull">steps outlined above</a>.
+          </li>
+        </ol>
+        <strong>Commit your progress to GitHub every day. Submit the link on the Hapara evidence card when you are finished.</strong>
+
+
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta property="og:title" content="Activity 4: Repetition and Flowcharts">
+    <title>Activity 4: Repetition and Flowcharts</title>
+    <link href="../resources/course_techno.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header"><img class="logo" src="../resources/images/STFX Logo.png" />
+        <div class="courseTitle">ICS2O: Introduction to Computer Studies, Grade 10, Open</div>
+
+        <h1>Unit 4: Programming with Python</h1>
+
+        <h2>Activity 4: Repetition and Flowcharts</h2>
+      </div>
+
+      <h3>Using Repetition Structures</h3>
+
+      <hr />
+      <p>Repetition in programming is the set of commands that allow the programmer to use code over and over. Repetition is one of the key tools programmers use to give their
+        programs flexibility, while at the same time re-using good code and developing an overall predictability for the user. Well designed repetition can allow the programmer to
+        save thousands of lines of code, while making programs more useful.</p>
+
+      <p>There are three basic kinds of repetition:</p>
+
+      <ul>
+        <li>infinite repetition</li>
+        <li>conditional repetition</li>
+        <li>counted repetition</li>
+      </ul>
+
+      <p>All three have their uses. We will examine each type in this activity.</p>
+
+      <h4><strong>Infinite Repetition</strong></h4>
+
+      <p>Infinite repetition is a programming structure in which the program code is repeated endlessly. Programs that must always be running, operating systems, monitoring
+        programs, or hardware drivers, for example, might be structured this way. The way to end a program in an infinite loop in Eclipse is to press the red stop button in
+        output/console window. Infinite loops are easy to make, and are the basis of other types of repetition.</p>
+
+      <p>The <em>syntax</em> for an infinite loop in Python is as follows:</p>
+
+      <pre>
+<span style="font-size: 12pt;"><strong>while True</strong>:
+    #code to be repeated
+    #code to be repeated
+</span></pre>
+
+      <p>There are several things to notice about this <em>structure</em>. First, the command <strong>while True: </strong>is called the header. It designates the beginning of the
+        structure. The code inside the structure is indented, which helps with code readability. Python also uses indentation to denote the start and end of all structures. The
+        loop structure ends when the indenting ends. When the interpreter reaches the last indented line, it returns to the beginning of the repetition structure (the line after
+        the header) and continues indefinitely.</p>
+
+      <p>Infinite repetition is often used in graphics animation. By making small changes to the location of a shape on the screen, we can simulate movement.</p>
+
+      <p>The program below shows a ball that is moving in a diagonal direction across the screen. Notice the position of the ball is stored in the variables <b>center_x</b> and
+        <b>center_y</b>. Each frame these value are changed by a small amount.</p>
+
+      <p>Try running this code in Eclipse. Since the loop is infinite, you will need to stop the program using the stop button <img src="images/A4StopButton.png" /> found on the
+        Console view.
+
+        <pre class=code>'''
+Created: Aug 2018
+StaightLine.py
+simple demonstration of pygame animation
+@author: K. Spindler
+'''
+import pygame
+
+from pygame import Color
+from pygame import draw
+from pygame import display
+from pygame import time
+
+#Constants & Variables
+SCREEN_SIZE = (600, 400)
+center_x = 50
+center_y = 50
+
+# initialize pygame modules
+pygame.init()
+
+clock = time.Clock()
+
+# get a surface for graphics display
+gameDisplay = display.set_mode(SCREEN_SIZE)
+
+while True:
+    # white background
+    gameDisplay.fill(Color('white'))
+
+    # draw the ball
+    draw.circle(gameDisplay, Color('purple'), (center_x, center_y), 30)
+
+    # show the graphics on the screen
+    display.flip()
+
+    # get ready for next frame - move the ball down and to the right
+    center_x += 2
+    center_y += 1
+
+    #delay the program to obtain 45 frames per second
+    clock.tick(45)</pre>
+
+        <h4>Conditional Repetition</h4>
+
+        <p>Conditional repetition is a repetition structure that includes a means of exiting the loop when a condition is met. This type of repetition gives the programmer an
+          enormous amount of flexibility.</p>
+
+        <p>The command</p>
+
+        <pre>
+<span style="font-size: 12pt;"><strong>while &lt;<em>condition</em>&gt;<em>:</em></strong></span></pre>
+
+        <p>is used as a header for a conditional loop. The <condition> is a special command that checks the status one or more variables, and forces an exit when the condition is
+            not met. </condition>
+        </p>
+
+        <p>When a condition is met, we say the condition evaluates to <strong>True</strong>, and when the condition is not met, we say the condition evaluates to
+          <strong>False</strong>.</p>
+
+        <p>Python has a variable type, called <strong>bool</strong>, which is can only hold one of two possible values: <strong>True</strong> or <strong>False</strong>. So the
+          <condition> in the header of a while loop could be replaced with a bool variable, with that variable being modified at some point in the loop to signal the loop&#39;s
+            exit.</condition>
+        </p>
+
+        <h5>Comparison operators</h5>
+
+        <p>One common way to create a <condition> is through the use <strong>comparison operators</strong>. </condition>
+        </p>
+
+        <p>Example: Given two numeric variables, <em>num</em> and <em>check</em>, which are initialized as follows:</p>
+
+        <pre>
+<span style="font-size: 12pt;">num = 4
+check = 3</span></pre>
+        Conditional statements could be set up as follows:
+
+        <table style="width: 680px;">
+          <tbody>
+            <tr>
+              <td style="width: 280px; text-align: center;">
+                <p><strong>Comparison</strong></p>
+              </td>
+              <td style="width: 127.5px; text-align: center;">
+                <p><strong>Operator</strong></p>
+              </td>
+              <td style="width: 151.5px; text-align: center;">
+                <p><strong>Syntax</strong></p>
+              </td>
+              <td style="width: 105px; text-align: center;">
+                <p><strong>Result</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>check is equal to num</p>
+              </td>
+              <td>
+                <p style="text-align: center;">==</p>
+              </td>
+              <td style="text-align: center;">
+                <p>check == num</p>
+              </td>
+              <td style="text-align: center;">
+                <p>False</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>check is not equal to num</p>
+              </td>
+              <td>
+                <p style="text-align: center;">!=</p>
+              </td>
+              <td style="text-align: center;">
+                <p>check != num</p>
+              </td>
+              <td style="text-align: center;">
+                <p>True</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>check is greater than num</p>
+              </td>
+              <td>
+                <p style="text-align: center;">&gt;</p>
+              </td>
+              <td style="text-align: center;">
+                <p>check &gt; num</p>
+              </td>
+              <td style="text-align: center;">
+                <p>False</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>check is less than num</p>
+              </td>
+              <td>
+                <p style="text-align: center;">&lt;</p>
+              </td>
+              <td style="text-align: center;">
+                <p>check &lt; num</p>
+              </td>
+              <td style="text-align: center;">
+                <p>True</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>check is greater than or equal to num</p>
+              </td>
+              <td>
+                <p style="text-align: center;">&gt;=</p>
+              </td>
+              <td style="text-align: center;">
+                <p>check &gt;= num</p>
+              </td>
+              <td style="text-align: center;">
+                <p>False</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>check is less than or equal to num</p>
+              </td>
+              <td>
+                <p style="text-align: center;">&lt;=</p>
+              </td>
+              <td style="text-align: center;">
+                <p>check &lt;= num</p>
+              </td>
+              <td style="text-align: center;">
+                <p>True</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The use of a condition in a loop means that the loop will be exited when the condition evaluates to False, and that code following the loop will be executed. The
+          following is an example of a conditional loop.</p>
+
+
+        <pre class="code">
+# Counting using a conditional loop
+# ICS2O Unit 4, Activity 4
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# Variables
+num = 1
+
+# Program Title
+print (&quot;This program will count up from 1 to any number.&quot;)
+
+# Input - Getting the number to count to, newline for formatting
+countTo = int(input(&quot;Please enter a number: &quot;))
+print (&quot;&quot;)
+
+# evaluates the value of num against countTo.
+while num &lt; countTo:
+    #output current num to screen
+    print (num)
+    #increases the value of num by 1 on each repetition.
+    num = num + 1
+
+# Output an empty line for formatting and indicate end of program
+print (&quot;&quot;)
+print (&quot;Finished Counting&quot;)</pre>
+
+        <h5>Boolean Operators</h5>
+
+        <p>Another way to create a condition, or to make a condition more complex, is through the use of <strong>boolean operators</strong>. Python recognizes 3 boolean operators:
+          <strong>and</strong>, <strong>or</strong> and <strong>not</strong>. Boolean operators are best described through the use of a truth table: a table that enumerates all the
+          possible values and combinations of the input variables, and gives the resulting output.</p>
+
+        <p>Example: Given two bool variables, <em>isCorrect</em> and <em>isDone</em>, the behaviour of the two boolean operators <strong>&quot;and&quot;</strong> &amp;
+          <strong>&quot;or&quot;</strong> is as follows:</p>
+
+        <table border="1" cellpadding="5" cellspacing="0">
+          <tbody>
+            <tr>
+              <td style="text-align: center;"><span style="font-size: 14pt;">isCorrect </span></td>
+              <td style="text-align: center;"><span style="font-size: 14pt;">isDone </span></td>
+              <td style="text-align: center;"><span style="font-size: 14pt;">isCorrect <strong>and</strong> isDone</span></td>
+              <td style="text-align: center;">&nbsp;</td>
+              <td style="text-align: center;"><span style="font-size: 14pt;">isCorrect </span></td>
+              <td style="text-align: center;"><span style="font-size: 14pt;">isDone </span></td>
+              <td style="text-align: center;"><span style="font-size: 14pt;">isCorrect <strong>or</strong> isDone</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">&nbsp;</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">False</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">&nbsp;</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">True</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">&nbsp;</td>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">True</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">&nbsp;</td>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">True</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The boolean <strong>&quot;not&quot;</strong> operator only takes one bool variable as input. It gives the opposite truth value as output. Example: given the bool
+          variable isDone, the truth table for the not operator is:</p>
+
+        <table border="1" cellpadding="5" cellspacing="0">
+          <tbody>
+            <tr>
+              <td style="text-align: center;"><span style="font-size: 14pt;">isDone </span></td>
+              <td style="text-align: center;"><span style="font-size: 14pt;"><strong>not </strong>isDone</span></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">False</td>
+              <td style="text-align: center;">True</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">True</td>
+              <td style="text-align: center;">False</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Counted Repetition</h4>
+
+        <p>Counted repetition allows the programmer to set the number of repetitions in a structure. The structure of counted loops requires a <strong>header</strong> that sets
+          an<strong> index variable</strong> and the <strong>range</strong> of the repetition. A counted loop that will repeat ten times, outputting the current repetition is as
+          follows:</p>
+
+        <pre>
+for i in range(0, 10):
+    print (i)
+</pre>
+
+        <p>In this example, the line</p>
+
+        <pre>for i in range(0, 10):</pre>
+
+        <p>is the <strong>header</strong> of the loop and creates an <strong>index variable</strong> called <strong>i</strong>. This is a variable that only exists within the loop.
+          Each repetition of the counted loop is called an <strong>iteration</strong>.</p>
+
+        <p>The <strong>range</strong> of the loop can be between any two positive integers. 0 can be used for the lower, or starting point of the range, but other integers can be
+          used. Variables and/or constants can be used to set the range so long as they are integers. The value of the index increases by 1 (by default) on each iteration.</p>
+
+        <p>Counted loops are used in the following situations.</p>
+
+        <ul>
+          <li>When the number of repetitions is known by the programmer.</li>
+          <li>When the number of repetitions is inputted by the user.</li>
+          <li>When the number of repetitions can be calculated.</li>
+          <li>When the number of repetitions is derivable through the logic of the program.</li>
+          <li>In the use of advanced data types such as arrays and records.</li>
+        </ul>
+
+        <p>They can be very useful in calculations involving series, graphics, and in string manipulation. In character graphics, counted loops can be used to control the location
+          of the cursor based on the size of the screen. An example of this is given below.</p>
+
+        <pre class="code">
+# The diagonal line program
+# ICS2O Unit 4, Activity 4
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# Variables
+ROWS = 25
+
+# Processing and Output
+for i in range(0, ROWS):
+    # Use the * with the &quot; &quot; to increase the number of spaces
+    # i indicates the # number of spaces
+    blanks = &quot; &quot; * i
+
+    # Adds the spaces to the asterisk to create the desired output
+    print(blanks + &#39;*&#39;)
+</pre>
+
+        <p>Type in and run the above program to see how the counted loop can provide a quick way to control simple graphics.</p>
+
+        <p>Counted loops can use the same index variable if they are created one after the other. Once a counted loop is completed the index variable (usually <strong>i</strong>)
+          no longer exists. As a result, the variable name can be used again.</p>
+
+        <p>We can modify our pygame animation to use a counted loop instead of an infinite loop, so the ball will stop short of going off the edge of the screen. Notice that only 1
+          line has changed; the loop header. Try running this program in Eclipse and notice the difference between this version and the previous animation.</p>
+
+        <pre class=code>'''
+Created: Aug 2018
+StaightLineStop.py
+simple demonstration of pygame animation
+@author: K. Spindler
+'''
+import pygame
+
+from pygame import Color
+from pygame import draw
+from pygame import display
+from pygame import time
+
+#Constants & Variables
+SCREEN_SIZE = (600, 400)
+center_x = 50
+center_y = 50
+
+# initialize pygame modules
+pygame.init()
+
+clock = time.Clock()
+
+# get a surface for graphics display
+gameDisplay = display.set_mode(SCREEN_SIZE)
+
+<strong>#Only let the ball go a fixed distance
+for i in range(1 , 250):</strong>
+    # white background
+    gameDisplay.fill(Color('white'))
+
+    # simple animation - ball
+    draw.circle(gameDisplay, Color('purple'), (center_x, center_y), 30)
+
+    # show the graphics on the screen
+    display.flip()
+
+    # get ready for next frame - move the ball down and to the right
+    center_x += 2
+    center_y += 1
+
+    #delay the program to obtain 45 frames per second
+    clock.tick(45)
+
+</pre>
+
+        <h5>Variations on Counted Repetition</h5>
+
+        <p>You can modify the header of a counted loop to change the behaviour of the loop. By adding a third number to the range() function, you can control how the value of the
+          index variable changes from one iteration to the next. The following two examples illustrate two counted loop variations; try running them in Eclipse!</p>
+
+
+        <pre class=code>
+# Countdown from 10
+for i in range(10, 0, -1):
+    print (i)</pre>
+
+        <pre class=code>
+# Counting by twos</span>
+for i in range(0, 50, 2):
+    print (i)</pre>
+
+        <h4>Nested Loops</h4>
+
+        <p>Nested loops are loops that exist within other loops. Any structure that is contained within another structure such as a loop, must be closed within that structure. This
+          is true for all structures in programming. Counted loops can be nested inside infinite loops, conditional loops or other counted loops. In this case, because the index
+          variable is still active, each nested counted loop must have a uniquely named index variable. It is traditional usage to name the next index <strong>j,</strong> then
+          <strong>k</strong> and so on.</p>
+
+        <p>The following program demonstrates a pygame animation using nested loop to ensure the shape does not move off the page. It uses a series of 4 counted loops, executed in
+          sequence, nested inside an infinite loop. Try running this code in Eclipse.</p>
+
+        <pre class="code">
+'''
+Created: Aug 2018
+Diamond.py
+pygame animation using nested loops
+@author: K. Spindler
+'''
+import pygame
+
+from pygame import Color
+from pygame import draw
+from pygame import display
+from pygame import time
+
+SCREEN_SIZE = (500, 500)
+center_x = 250
+center_y = 150
+
+# initialize pygame modules
+pygame.init()
+
+clock = time.Clock()
+
+# get a surface for graphics display
+gameDisplay = display.set_mode(SCREEN_SIZE)
+
+while True:
+    for i in range (0, 100):
+        # white background
+        gameDisplay.fill(Color('white'))
+
+        # simple animation - ball
+        draw.circle(gameDisplay, Color('purple'), (center_x, center_y), 30)
+
+        # show the graphics on the screen
+        display.flip()
+
+        # get ready for next frame - move the ball down and to the right
+        center_x += 1
+        center_y += 1
+
+        # delay the program to obtain 60 frames per second
+        clock.tick(60)
+
+    for i in range (0, 100):
+        # white background
+        gameDisplay.fill(Color('white'))
+
+        # simple animation - ball
+        draw.circle(gameDisplay, Color('red'), (center_x, center_y), 30)
+
+        # show the graphics on the screen
+        display.flip()
+
+        # get ready for next frame - move the ball down and to the left
+        center_x -= 1
+        center_y += 1
+
+        # delay the program to obtain 60 frames per second
+        clock.tick(60)
+
+    for i in range (0, 100):
+        # white background
+        gameDisplay.fill(Color('white'))
+
+        # simple animation - ball
+        draw.circle(gameDisplay, Color('blue'), (center_x, center_y), 30)
+
+        # show the graphics on the screen
+        display.flip()
+
+        # get ready for next frame -- move the ball up and to the left
+        center_x -= 1
+        center_y -= 1
+
+        # delay the program to obtain 60 frames per second
+        clock.tick(60)
+
+    for i in range (0, 100):
+        # white background
+        gameDisplay.fill(Color('white'))
+
+        # simple animation - ball
+        draw.circle(gameDisplay, Color('green'), (center_x, center_y), 30)
+
+        # show the graphics on the screen
+        display.flip()
+
+        # get ready for next frame - - move the ball up and to the right
+        center_x += 1
+        center_y -= 1
+
+        # delay the program to obtain 60 frames per second
+        clock.tick(60)
+</pre>
+
+        <h3>Design: Flowcharts</h3>
+
+        <hr />
+        <p>Flowcharts are graphical representations of steps used to solve a problem, also called an <strong>algorithm</strong>.<br />
+          A basic flowchart contains a starting point, some decisions, some steps, and an ending point. Program flow is directed by arrows.</p>
+
+        <p>When planning out your programs, if there is a repetition structure involved, a simple IPO chart will not be sufficient. Your designs for this activity must involve a
+          flowchart. LucidChart is a tool for Google Docs that allows you to easily create flowcharts for your assignments. The following table represents the symbols used in a
+          flow chart:</p>
+
+        <p style="text-align: center;">&nbsp;</p>
+
+        <table style="margin-right: auto; margin-left: auto;">
+          <tbody>
+            <tr>
+              <td style="width: 105px; text-align: center;"><strong>Symbol</strong></td>
+              <td style="width: 378px; text-align: center;"><strong>Meaning</strong></td>
+            </tr>
+            <tr>
+              <td style="width: 105px;"><img src="images/A4terminator.png" /></td>
+              <td style="width: 378px;"><strong>Terminator </strong>(used at beginning and end of program)</td>
+            </tr>
+            <tr>
+              <td style="width: 105px;"><img src="images/A4process.png" /></td>
+              <td style="width: 378px;"><strong>Process</strong> (calculation, assigning value, do something)</td>
+            </tr>
+            <tr>
+              <td style="width: 105px;"><img src="images/A4decision.png" /></td>
+              <td style="width: 378px;"><strong>Decision</strong> (question asked, yes/no response only)</td>
+            </tr>
+            <tr>
+              <td style="width: 105px;"><img src="images/A4IO.png" /></td>
+              <td style="width: 378px;"><strong>Input/Output </strong>(user prompts, data entered by user)</td>
+            </tr>
+            <tr>
+              <td style="width: 105px;"><img src="images/A4arrows.png" /></td>
+              <td style="width: 378px;"><strong>Directional Arrows (connect one symbol to another)</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Here is a flowchart showing a conditional repetition structure, and the Python code that could be used to implement it. Notice the use of the value -1 to indicate the
+          end of a loop; in computer science this is called a <strong>sentinel value</strong>.</p>
+
+        <p><img height="718" src="images/A4flowchart.png" style="margin-right: auto; margin-left: auto; display: block;" width="424" /></p>
+
+        <pre class="code">
+# Simple Tax Calculation Program
+# ICS2O Unit 4, Activity 4
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# Variables
+TAX_RATE = 13
+subtotal = 0.0
+
+# Program Title
+print (&quot;Tax Calculation Program&quot;)
+print ()
+
+# Input - User prompt, with a sentinel (-1) to signal completion
+price = float(input(&quot;Enter price (-1 to Exit): &quot;))
+
+# Input - Continue adding to the subtotal until the user is done
+while price != -1:
+    subtotal = subtotal + price
+    price = float(input(&quot;Enter price (-1 to Exit): &quot;))
+
+# Processing - calculation of tax
+tax = subtotal * TAX_RATE / 100
+# Processing - calculation of total, including tax
+total = subtotal + tax
+
+# Output all calculations to user (newline for readability)
+print ()
+print (&quot;Total Cost is: $&quot;, subtotal)
+print (&quot;Tax is: $&quot; , tax)
+print (&quot;Total + Tax is:  $&quot;, total)</pre>
+
+        <h3>Evidence of Learning</h3>
+
+        <hr />
+        <h4 class="h4_assignment_title"><img class="icon" src="../resources/images/dropbox.gif" />Programming Exercises</h4>
+
+        <div class="dropbox">
+          <p>Save the following programs in the <strong>activity4</strong> package of your Unit 4 Python Project.</p>
+
+          <p>You must complete a <strong>Flowchart</strong> for the first <strong>TWO</strong> of the programs below. Use the Activity 4 evidence card on Hapara for your flowcharts.</p>
+
+          <ol>
+            <li>Create a program that will ask the user for a large number and for the number to count by. The program is then to count up to the number and then count down to zero
+              by the number entered. Name the program <strong>Q1Counting</strong></li>
+            <li>Create a program that will allows the user to enter a series of non-zero numbers. When the user is finished, they will enter the number 0, and the program will
+              display the sum and average of the numbers entered. Name the program <strong>Q2Average</strong></li>
+            <li>Create a program that will place asterisks on the screen. The program should output 25 rows of 80 asterisks, outputting them one at a time (hint: you must use
+              nested loops) Name the program <strong>Q3Asterisks</strong></li>
+            <li>Using the pygame library, create an interesting sceensaver. You must have animation and objects moving around. You objects should stay on the screen and not move
+              off, but should move in more than 1 direction. Make it interesting and have fun! Name the program <strong>Q4ScreenSaver</strong></li>
+          </ol>
+
+          <p>Commit and push your code to your GitHub repository EVERY DAY, and submit the Activity 4 evidence card when you are done. It is YOUR responsibility to ensure that your
+            code is on Github!</p>
+        </div>
+    </div>
+  </body>
+
+</html>

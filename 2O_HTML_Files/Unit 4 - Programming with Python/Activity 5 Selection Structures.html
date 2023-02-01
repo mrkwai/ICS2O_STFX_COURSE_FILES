@@ -1,0 +1,487 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta property="og:title" content="Activity 5: Selection and Pseudocode">
+    <title>Activity 5: Selection and Pseudocode</title>
+    <link href="../resources/course_techno.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header"><img class="logo" src="../resources/images/STFX Logo.png" />
+        <div class="courseTitle">ICS2O: Introduction to Computer Studies, Grade 10, Open</div>
+
+        <h1>Unit 4: Programming with Python</h1>
+
+        <h2>Activity 5: Selection and Pseudocode</h2>
+      </div>
+
+      <h3>Selection Structures in Python</h3>
+
+      <hr />
+      <p>A selection structure is used wherever a program needs different processing, or different output, based on the input or the needs of the user at run time. Selection is
+        sometimes referred to as <strong>branching</strong> because one of two or more branches is used based on the results of a <strong>conditional statement</strong>. We have
+        seen this before in the header of a while loop. The branch choice is to either continue in the loop or exit the loop based on the results of the conditional statement.</p>
+
+      <pre class="code">
+# Using the while loop to demonstrate branching
+# ICS2O Unit 4, Activity 6
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# Generate random numbers: seed() ensures they are actually random
+import random
+random.seed()
+
+# Variables
+userContinue = &#39;y&#39;
+userAnswer = 0
+
+# Program Title
+print (&quot;Addition Questions Program&quot;)
+
+# User can plan as many times as they like
+while userContinue == &#39;y&#39; or userContinue == &#39;Y&#39;::
+    # Create the numbers for the addition question
+    num1 = random.randint(1, 10)
+    num2 = random.randint(1, 10)
+
+    # exit branches out of the second loop when the answer is correct
+    while userAnswer != num1 + num2:
+        # User Prompt
+        print (&quot;Answer the addition question: &quot;)
+        print (num1, &quot; + &quot;, num2, &quot; = &quot;, end=&#39;&#39;)
+
+        # Input: User&#39;s response
+        userAnswer = int(input())
+
+    # exit branches out of the first loop if user entered &#39;n&#39;
+    userContinue = input(&quot;Continue? (y/n)&quot;)</pre>
+
+      <h4>The If Statement</h4>
+
+      <p>In the Python language, a selection structure is created through the use of the <strong>if ... </strong>statement. There are a number of variations on the <strong>if
+          ...</strong> statement, such as <strong>if ... else</strong> and <strong>if ... elif ... else</strong>. Each variation creates a different number of branches. Other
+        languages (like Java &amp; C++) have more options for selection structures (such as case or switch statements).</p>
+
+      <h5>Simple (One Branch) Selection (if ...)</h5>
+
+      <p>The most basic type of selection has a single, temporary branch. The branch is selected if a condition is met. The syntax of this statement is a follows:</p>
+
+      <pre>
+<strong>if <em>&lt;condition&gt;</em>:
+    # code to run when condition evaluates to True</strong></pre>
+
+      <p>The <strong>condition</strong> is the same type of condition used for the headers of while loops. If the condition is <strong>True</strong> then the programming code in
+        the selection structure is executed. If the condition is <strong>False</strong> then all of the code in the selection structure is ignored.</p>
+
+      <p>The following is an example of pygame animation using the <strong>if ..</strong> statement to detect if the ball has hit the top or bottom, left or right side of the
+        screen. It uses the variables <strong>dx</strong> and <strong>dy</strong> to store the change in position of the ball horizontally and vertically.</p>
+
+      <p>When the ball reaches the side of the screen, the <strong>sign (+/-)</strong> of dx or dy is changed. This will make the ball appear to 'bounce' off the sides of the
+        screen. Try running this program in Eclipse</p>
+
+      <pre class=code>'''
+Created: Aug 2018
+BallBounce.py
+pygame animation using selection statements
+@author: K. Spindler
+'''
+import pygame
+import random
+
+from pygame import Color
+from pygame import draw
+from pygame import display
+from pygame import time
+
+# Constants
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 400
+RADIUS = 30
+
+# Variables
+
+# position of ball
+center_x = 250
+center_y = 250
+
+# change in position of the ball
+dx = random.randint(2, 4)
+dy = random.randint(2, 4)
+
+# initialize pygame modules
+pygame.init()
+
+clock = time.Clock()
+
+# get a surface for graphics display
+gameDisplay = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+while True:
+    # white background
+    gameDisplay.fill(Color('white'))
+
+    # draw the ball
+    draw.circle(gameDisplay, Color('purple'), (center_x, center_y), RADIUS)
+
+    # show the graphics on the screen
+    display.flip()
+
+    # check for ball hitting the sides; make it bounce
+    if center_x + RADIUS > SCREEN_WIDTH or center_x - RADIUS < 0:
+        dx = -dx
+
+    # check for ball hitting the top or bottom; make it bounce
+    if center_y + RADIUS > SCREEN_HEIGHT or center_y - RADIUS < 0:
+        dy = -dy
+
+    # get ready for next frame - move the ball
+    center_x += dx
+    center_y += dy
+
+    #delay the program to obtain 45 frames per second
+    clock.tick(45)</pre>
+
+
+      <p>In the above example notice that the <strong>if ...</strong> statement is used to change the value of a variable only when it is needed (ie the ball hits the sides of the
+        screen). If the change is not needed dx or dy will stay the same and the ball will continue moving in the same direction.</p>
+
+      <h5>Two Branch Selection (if ... else ...)</h5>
+
+      <p>Programming problems are often solved by two or more options that are dependent on the circumstances in the program at the time. This two branch system is a simple
+        extension of the <strong>if ...</strong> statement. This approach states that if the first option is not used then the second must be used. This is the <strong>if ...
+          else</strong> structure.</p>
+
+      <p>The syntax of this statement is a follows:</p>
+
+      <pre><strong>if <em>&lt;condition&gt;</em>:
+    # code to run when condition evaluates to True
+else:
+    # code to run when condition evaluates to False</strong></pre>
+
+      <p>An example of the use of this structure is below.</p>
+
+      <pre class="code">
+# Example of the if ... else ... statement, using two branches.
+# This program evaluates whether a person is of driving age.
+# ICS2O Unit 4, Activity 6
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# Constants
+DRIVING_AGE = 16
+
+# Input
+userAge = int(input(&quot;Please enter your age: &quot;))
+
+# Processing and Output
+if userAge &gt;= DRIVING_AGE:
+    # user&#39;s age is greater than the driving age
+    print (&quot;You can drive!&quot;)
+else:
+    # user&#39;s age must be less than driving age
+    print (&quot;You are too young to drive!&quot;)</pre>
+
+      <h5>Multi Branch Selection (if ... elif ... else ...)</h5>
+
+      <p>While the two branch structure is very useful there are time when many branches are necessary. In these situations it is necessary to use a different structure using the
+        <strong>elif</strong> keyword to start a new conditional branch. You can have as many elif statements as required. The syntax for this structure is as follows:</p>
+
+      <pre><strong>if <em>&lt;condition1&gt;</em>:
+    # code to run when condition1 is True
+elif <em>&lt;condition2&gt;</em>:
+    # code to run when condition1 is False and condition2 is True
+elif <em>&lt;condition3&gt;</em>:
+    # code to run when condition1 and condition2 are False and condition3 is True
+else:
+    # code to run when all previous conditions are False</strong></pre>
+
+      <p>The <strong>elif</strong> permits the use of multiple conditions. The <strong>first statement</strong> that matches the condition will be implemented, so the order of
+        these statements is very important! The <strong>condition</strong> is the same as that used in the header of while loops and in the if ... statements. The use of the
+        <strong>else</strong> at the end is optional. Review the following example:</p>
+
+      <pre class="code">
+# Example of the if ... elif ... else ... statement, using 3 branches
+# This program evaluates if a person is of driving age or needs a retest
+# Seniors over 80 require a retest.
+# ICS2O Unit 4, Activity 6
+# Created by R. Kuzmochka
+# Edited by K. Spindler
+
+# Variables
+DRIVING_AGE = 16
+RETEST_AGE = 80
+
+# Input
+userAge = int(input(&quot;Please enter your age: &quot;))
+
+# Processing and Output
+if userAge &gt;= DRIVING_AGE and userAge &lt; RETEST_AGE:  #notice the change
+    # user&#39;s age is greater than the driving age, but not a senior
+    print (&quot;You can drive!&quot;)
+elif userAge &gt;= RETEST_AGE:
+    # user is a senior and needs to retest for safety reasons
+    print (&quot;You will need a retest in order to drive.&quot;)
+else:
+    # user&#39;s age must be less than driving age
+    print (&quot;You are too young to drive!&quot;)</pre>
+
+      <h5>Nested Selection</h5>
+
+      <p>Selection can be nested. This mean that selection can be included in another repetition or selection structure. However, when a selection structure is inside inside
+        another selection structure there are several considerations. First, this nested structure will only be activated if the outer selection is True. This means that the
+        selection is a secondary selection.</p>
+
+      <p>An example of a nested selection would be the handling of <strong>pygame events</strong>. Events allow a user to interact with the pygame program. </p>
+
+      <p>Add the following code to the <strong>BallBounce.py</strong>, just after the infinite loop header (<tt>while True:</tt>) This code allows the user to interact with the
+        program.
+
+        <pre class="code">    # Main Event Loop - get the current event
+    for evt in pygame.event.get():
+
+        # Does the user want to quit? (red "x" button on upper right)
+        if evt.type == pygame.QUIT:
+            quit()
+
+        # make ball respond to keyboard input
+        if evt.type == pygame.KEYDOWN:
+            if evt.key == pygame.K_DOWN:
+                dy = random.randint(2, 4)
+
+            elif evt.key == pygame.K_UP:
+                dy = -random.randint(2, 4)
+
+            elif evt.key == pygame.K_LEFT:
+                dx = -random.randint(2, 4)
+
+            elif evt.key == pygame.K_RIGHT:
+                dx = random.randint(2, 4)
+</pre>
+
+        <p>This code uses a special type of for loop. Instead of counting numbers, it cycles through the list of events that have been triggered since the last loop. This gives the
+          user a chance to interact with the program, though mouse clicks or key strokes.</p>
+
+        <p>There are two main events that this program will detect:
+          <ol>
+            <li>a <strong>QUIT</strong> event (triggered by the user clicking the red 'x' at the upper right corner of the window)
+            <li><strong>KEYDOWN</strong> events (to respond when the user type a key on the keyboard)</li>
+            <ul>
+              <li>When the user types an arrow key, the ball will respond by moving in that direction.</li>
+              <li>A random number (2, 3 or 4) will be used for the dx or dy variable, to give some variance in the movement</li>
+              <li>Note that the multi-branch if statement only executes when a <strong>KEYDOWN</strong> event has already been detected</li>
+            </ul>
+          </ol>
+
+          <h3>Pseudocode</h3>
+
+          <hr />
+          <p>Pseudocode is the use of everyday language to describe the operations that the programmer sees as necessary to create a program or solve a problem. Pseudocode does not
+            use programming <em>language,</em> but it does use programming <em>concepts</em>. The programmer essentially lays out the required variables and algorithms needed for
+            the program before selecting a programming language. It requires that the programmer know the kind of operations that can be performed in a programming language.</p>
+
+          <p>Python, C, C++, Turing, and Java and many other programming languages use the same basic structures (sequence, repetition, selection). What can be created with a
+            knowledge of Python commands can be used in other languages such a Turing, C, C++, C# and even Java. Additionally, the pseudocode demonstrates more clearly than the
+            actual code the algorithms that the programmer sees as critical to solving the problem.</p>
+
+          <p>As an example, consider writing a program that would find the range of marks in a class, which would be the difference between the lowest and the highest mark. The
+            marks are not sorted, so the code must read through the entire list of marks, keeping track of which mark is the lowest and the highest. Assume all marks are in
+            percents, so between 0 and 100. The pseudocode would look like the following:</p>
+
+          <pre class="code">
+declare a variable highestMark, set to 0
+declare a variable called lowestMark, set to 100
+declare a variable called done, set to &quot;N&quot;
+declare a variable currentMark, to hold the mark the user enters
+declare a variable markRange, to hold that final output
+
+while user is still entering marks
+    prompt user for mark
+    assign currentMark to user input
+
+    if currentMark is less that lowestMark, we have a new low mark
+        assign lowestMark to currentMark
+
+    if currentMark is greater than highestMark, we have a new high mark
+        assign highestMark to currentMark
+
+    prompt user for Y or N to indicate if they are done entering marks
+    assign to done
+    back to start of loop
+
+assign markRange to highestMark - lowestMark
+output markRange to user
+</pre>
+
+          <p>In Python, this code would look like this:</p>
+
+          <pre class="code">
+# Mark Range Calculator
+# This program will determine the range of a set of marks
+# provided by the user
+# ICS2O Unit 4, Activity 6
+# Created by K. Spindler
+
+# Variables
+highestMark = 0
+lowestMark = 100
+done = &#39;N&#39;
+
+# Loop while user is still entering marks
+while done == &#39;N&#39; or done == &#39;n&#39;:
+    # Input: ask user for mark
+    currentMark = int(input(&quot;Input a mark: &quot;))
+
+    #Processing
+    if currentMark &lt; lowestMark:
+        # we have a new lowest mark
+        lowestMark = currentMark
+
+    if currentMark &gt; highestMark:
+        # we have a new highest mark
+        highestMark = currentMark
+
+    # prompt the user to continue or end the loop
+    done = input(&quot;done marks? Y or N: &quot;)
+
+# Range is the difference between the highest and lowest mark
+markRange = highestMark - lowestMark
+
+# Output, newline for readability
+print(&quot;\nDifference in marks is &quot;, markRange)</pre>
+
+          <p>In another language (Turing), the code for this program would be:</p>
+
+          <pre class="code">
+% Mark Range Calculator
+% This program will determine the range of a set of marks
+% provided by the user
+% Created by K. Spindler
+
+% Declaring Variables
+var highestMark, lowestMark, currentMark, markRange : int
+var done : string
+
+% Initializing Variables
+highestMark := 0
+lowestMark := 100
+
+loop
+    % Input: ask user for mark
+    put &quot;Input a mark&quot;
+    get currentMark
+
+    % Processing
+    if (currentMark &lt; lowestMark) then
+        % we have a new lowest mark
+        lowestMark := currentMark
+    end if
+
+    if (currentMark &gt; highestMark) then
+        % we have a new highest mark
+        highestMark := currentMark
+    end if
+
+    % Prompt user to continue or end the loop
+    put &quot;done marks? Y or N&quot;
+    get done
+
+    % End loop when user is done
+    exit when done = &quot;Y&quot; or done = &quot;y&quot;
+end loop
+
+% Range is the difference between the highest and lowest mark
+markRange := highestMark &ndash; lowestMark
+
+% Output, newline for readability
+put &quot;\nDifference in marks is &quot;, markRange</pre>
+
+          <p>And here&#39;s what it would look like in Java:</p>
+
+          <pre class="code">
+import java.io.*;
+
+/**
+ * Mark Range Calculator
+ * This program will determine the range of a set of marks
+ * provided by the user
+ * @author K. Spindler
+ */
+public class MarkCalculator {
+
+    public static void main(String[] args) throws IOException {
+        // Declaring Variables
+        int highestMark, lowestMark, currentMark, markRange;
+        char done;
+        BufferedReader br;
+
+        // Initializing variables
+        highestMark = 0;
+        lowestMark = 100;
+        done = &#39;N&#39;;
+        br = new BufferedReader(new InputStreamReader(System.in));
+
+        // Loop while user is still entering marks
+        while (done == &#39;N&#39; || done == &#39;n&#39;) {
+            // Input: ask user for mark
+            System.out.print(&quot;Input a mark: &quot;);
+            currentMark = Integer.parseInt(br.readLine());
+
+            /// Processing
+            if (currentMark &lt; lowestMark) {
+                // we have a new lowest mark
+                lowestMark = currentMark;
+            }
+            if (currentMark &gt; highestMark) {
+                // we have a new highest mark
+                highestMark = currentMark;
+            }
+            // prompt the user to continue or end the loop
+            System.out.print(&quot;Done marks? Y or N: &quot;);
+            done = br.readLine().charAt(0);
+        }
+        // Range is the difference between the highest and lowest mark
+        markRange = highestMark - lowestMark;
+
+        // Output, newline for readability
+        System.out.print(&quot;\nDifference in marks is &quot; + markRange);
+    }
+}
+</pre>
+
+          <p>Take a moment to review all three implementations of the program, noting their similarities and differences. Notice how the structure of the pseudocode is evident in
+            all 3 code snippets. Also notice how much of the information in the pseudocode becomes comments in the actual code. This is one of the benefits to using pseudocode;
+            your comments write themselves!</p>
+
+          <h3>Evidence of Learning</h3>
+
+          <hr />
+          <h4 class="h4_assignment_title"><img class="icon" src="../resources/images/dropbox.gif" />Programming Exercises</h4>
+
+          <div class="dropbox">
+            <p>Save the following programs in the <strong>activity5</strong> package of your Unit 4 Python Project.</p>
+
+            <p>You must plan your program using <strong>pseudocode</strong> for at least <strong>TWO</strong> of the programs below. Use the Activity 5 evidence card on Hapara for
+              your pseudocode.</p>
+
+            <ol>
+              <li>Create a program that will tell a person whether they are in elementary school (ages 5 - 11), intermediate (12-14), high school (15-18), or
+                university/college/workforce (above 19). Name the program <strong>Q1AgeChecker</strong>.</li>
+              <li>Create a math drill program. Your program will randomly create either an addition (1 to 100) or multiplication (1 to 12) question. Give the user feedback so they
+                know if their answer was correct. Make sure the user has a way of exiting the game. Name the program <strong>Q2MathDrill</strong></li>
+              <li>Write a program that accepts 2 numbers, then outputs all the prime numbers from between those 2 numbers. Name the program <strong>Q3Primes</strong></li>
+              <li>Create a pygame animation that responds to user keyboard commands. Try using new shapes (ellipse, rectangle, polygon) and/or add more than one shape. Be creative
+                with what the shape does (move, change color, change size) in response to user commands. Be sure to add checks so that your shape(s) don't move off the screen! Name
+                the program <strong>Q4Animation</strong></li>
+            </ol>
+
+            <p>Commit and push your code to your GitHub repository EVERY DAY, and submit the Activity 4 evidence card when you are done. It is YOUR responsibility to ensure that
+              your code is on Github!</p>
+          </div>
+    </div>
+  </body>
+
+</html>

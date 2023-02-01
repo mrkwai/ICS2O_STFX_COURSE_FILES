@@ -1,0 +1,1407 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta property="og:title" content="Pygame Library">
+    <title>Pygame Library</title>
+    <link href="../resources/course_techno.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header"><img class="logo" src="../resources/images/SHH Logo.png" />
+        <div class="courseTitle">ICS2O: Introduction to Computer Studies, Grade 10, Open</div>
+
+        <h1>Unit 4: Programming with Python</h1>
+
+        <h2>Pygame Library</h2>
+      </div>
+
+      <h4>Click <a href="https://www.pygame.org/docs/" target=_blank>HERE</a> for the Pygame API</h4>
+
+      <h3>Pygame Colours</h3>
+      <hr />
+
+      <table width="800"
+        style="vertical-align:middle;background:#ffffff;padding:0;line-height:133%;font-family:monospace;white-space:nowrap;overflow:auto;font-size:10pt;color:#696969;">
+        <tr>
+          <td width="64" style="background:#F0F8FF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>&nbsp;#F0F8FF&nbsp;aliceblue</td>
+          <td width="64" style="background:#FAEBD7;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>&nbsp;#FAEBD7&nbsp;antiquewhite</td>
+          <td width="64" style="background:#FFEFDB;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>&nbsp;#FFEFDB&nbsp;antiquewhite1</td>
+          <td width="64" style="background:#EEDFCC;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>&nbsp;#EEDFCC&nbsp;antiquewhite2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CDC0B0;">&nbsp;</td>
+          <td>&nbsp;#CDC0B0&nbsp;antiquewhite3</td>
+          <td width="64" style="background:#8B8378;">&nbsp;</td>
+          <td>&nbsp;#8B8378&nbsp;antiquewhite4</td>
+          <td width="64" style="background:#7FFFD4;">&nbsp;</td>
+          <td>&nbsp;#7FFFD4&nbsp;aquamarine</td>
+          <td width="64" style="background:#7FFFD4;">&nbsp;</td>
+          <td>&nbsp;#7FFFD4&nbsp;aquamarine1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#76EEC6;">&nbsp;</td>
+          <td>&nbsp;#76EEC6&nbsp;aquamarine2</td>
+          <td width="64" style="background:#66CDAA;">&nbsp;</td>
+          <td>&nbsp;#66CDAA&nbsp;aquamarine3</td>
+          <td width="64" style="background:#458B74;">&nbsp;</td>
+          <td>&nbsp;#458B74&nbsp;aquamarine4</td>
+          <td width="64" style="background:#F0FFFF;">&nbsp;</td>
+          <td>&nbsp;#F0FFFF&nbsp;azure</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#F0FFFF;">&nbsp;</td>
+          <td>&nbsp;#F0FFFF&nbsp;azure1</td>
+          <td width="64" style="background:#E0EEEE;">&nbsp;</td>
+          <td>&nbsp;#E0EEEE&nbsp;azure2</td>
+          <td width="64" style="background:#C1CDCD;">&nbsp;</td>
+          <td>&nbsp;#C1CDCD&nbsp;azure3</td>
+          <td width="64" style="background:#838B8B;">&nbsp;</td>
+          <td>&nbsp;#838B8B&nbsp;azure4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#F5F5DC;">&nbsp;</td>
+          <td>&nbsp;#F5F5DC&nbsp;beige</td>
+          <td width="64" style="background:#FFE4C4;">&nbsp;</td>
+          <td>&nbsp;#FFE4C4&nbsp;bisque</td>
+          <td width="64" style="background:#FFE4C4;">&nbsp;</td>
+          <td>&nbsp;#FFE4C4&nbsp;bisque1</td>
+          <td width="64" style="background:#EED5B7;">&nbsp;</td>
+          <td>&nbsp;#EED5B7&nbsp;bisque2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CDB79E;">&nbsp;</td>
+          <td>&nbsp;#CDB79E&nbsp;bisque3</td>
+          <td width="64" style="background:#8B7D6B;">&nbsp;</td>
+          <td>&nbsp;#8B7D6B&nbsp;bisque4</td>
+          <td width="64" style="background:#000000;">&nbsp;</td>
+          <td>&nbsp;#000000&nbsp;black</td>
+          <td width="64" style="background:#FFEBCD;">&nbsp;</td>
+          <td>&nbsp;#FFEBCD&nbsp;blanchedalmond</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#0000FF;">&nbsp;</td>
+          <td>&nbsp;#0000FF&nbsp;blue</td>
+          <td width="64" style="background:#0000FF;">&nbsp;</td>
+          <td>&nbsp;#0000FF&nbsp;blue1</td>
+          <td width="64" style="background:#0000EE;">&nbsp;</td>
+          <td>&nbsp;#0000EE&nbsp;blue2</td>
+          <td width="64" style="background:#0000CD;">&nbsp;</td>
+          <td>&nbsp;#0000CD&nbsp;blue3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#00008B;">&nbsp;</td>
+          <td>&nbsp;#00008B&nbsp;blue4</td>
+          <td width="64" style="background:#8A2BE2;">&nbsp;</td>
+          <td>&nbsp;#8A2BE2&nbsp;blueviolet</td>
+          <td width="64" style="background:#A52A2A;">&nbsp;</td>
+          <td>&nbsp;#A52A2A&nbsp;brown</td>
+          <td width="64" style="background:#FF4040;">&nbsp;</td>
+          <td>&nbsp;#FF4040&nbsp;brown1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EE3B3B;">&nbsp;</td>
+          <td>&nbsp;#EE3B3B&nbsp;brown2</td>
+          <td width="64" style="background:#CD3333;">&nbsp;</td>
+          <td>&nbsp;#CD3333&nbsp;brown3</td>
+          <td width="64" style="background:#8B2323;">&nbsp;</td>
+          <td>&nbsp;#8B2323&nbsp;brown4</td>
+          <td width="64" style="background:#DEB887;">&nbsp;</td>
+          <td>&nbsp;#DEB887&nbsp;burlywood</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFD39B;">&nbsp;</td>
+          <td>&nbsp;#FFD39B&nbsp;burlywood1</td>
+          <td width="64" style="background:#EEC591;">&nbsp;</td>
+          <td>&nbsp;#EEC591&nbsp;burlywood2</td>
+          <td width="64" style="background:#CDAA7D;">&nbsp;</td>
+          <td>&nbsp;#CDAA7D&nbsp;burlywood3</td>
+          <td width="64" style="background:#8B7355;">&nbsp;</td>
+          <td>&nbsp;#8B7355&nbsp;burlywood4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#5F9EA0;">&nbsp;</td>
+          <td>&nbsp;#5F9EA0&nbsp;cadetblue</td>
+          <td width="64" style="background:#98F5FF;">&nbsp;</td>
+          <td>&nbsp;#98F5FF&nbsp;cadetblue1</td>
+          <td width="64" style="background:#8EE5EE;">&nbsp;</td>
+          <td>&nbsp;#8EE5EE&nbsp;cadetblue2</td>
+          <td width="64" style="background:#7AC5CD;">&nbsp;</td>
+          <td>&nbsp;#7AC5CD&nbsp;cadetblue3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#53868B;">&nbsp;</td>
+          <td>&nbsp;#53868B&nbsp;cadetblue4</td>
+          <td width="64" style="background:#7FFF00;">&nbsp;</td>
+          <td>&nbsp;#7FFF00&nbsp;chartreuse</td>
+          <td width="64" style="background:#7FFF00;">&nbsp;</td>
+          <td>&nbsp;#7FFF00&nbsp;chartreuse1</td>
+          <td width="64" style="background:#76EE00;">&nbsp;</td>
+          <td>&nbsp;#76EE00&nbsp;chartreuse2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#66CD00;">&nbsp;</td>
+          <td>&nbsp;#66CD00&nbsp;chartreuse3</td>
+          <td width="64" style="background:#458B00;">&nbsp;</td>
+          <td>&nbsp;#458B00&nbsp;chartreuse4</td>
+          <td width="64" style="background:#D2691E;">&nbsp;</td>
+          <td>&nbsp;#D2691E&nbsp;chocolate</td>
+          <td width="64" style="background:#FF7F24;">&nbsp;</td>
+          <td>&nbsp;#FF7F24&nbsp;chocolate1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EE7621;">&nbsp;</td>
+          <td>&nbsp;#EE7621&nbsp;chocolate2</td>
+          <td width="64" style="background:#CD661D;">&nbsp;</td>
+          <td>&nbsp;#CD661D&nbsp;chocolate3</td>
+          <td width="64" style="background:#8B4513;">&nbsp;</td>
+          <td>&nbsp;#8B4513&nbsp;chocolate4</td>
+          <td width="64" style="background:#FF7F50;">&nbsp;</td>
+          <td>&nbsp;#FF7F50&nbsp;coral</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF7256;">&nbsp;</td>
+          <td>&nbsp;#FF7256&nbsp;coral1</td>
+          <td width="64" style="background:#EE6A50;">&nbsp;</td>
+          <td>&nbsp;#EE6A50&nbsp;coral2</td>
+          <td width="64" style="background:#CD5B45;">&nbsp;</td>
+          <td>&nbsp;#CD5B45&nbsp;coral3</td>
+          <td width="64" style="background:#8B3E2F;">&nbsp;</td>
+          <td>&nbsp;#8B3E2F&nbsp;coral4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#6495ED;">&nbsp;</td>
+          <td>&nbsp;#6495ED&nbsp;cornflowerblue</td>
+          <td width="64" style="background:#FFF8DC;">&nbsp;</td>
+          <td>&nbsp;#FFF8DC&nbsp;cornsilk</td>
+          <td width="64" style="background:#FFF8DC;">&nbsp;</td>
+          <td>&nbsp;#FFF8DC&nbsp;cornsilk1</td>
+          <td width="64" style="background:#EEE8CD;">&nbsp;</td>
+          <td>&nbsp;#EEE8CD&nbsp;cornsilk2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CDC8B1;">&nbsp;</td>
+          <td>&nbsp;#CDC8B1&nbsp;cornsilk3</td>
+          <td width="64" style="background:#8B8878;">&nbsp;</td>
+          <td>&nbsp;#8B8878&nbsp;cornsilk4</td>
+          <td width="64" style="background:#00FFFF;">&nbsp;</td>
+          <td>&nbsp;#00FFFF&nbsp;cyan</td>
+          <td width="64" style="background:#00FFFF;">&nbsp;</td>
+          <td>&nbsp;#00FFFF&nbsp;cyan1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#00EEEE;">&nbsp;</td>
+          <td>&nbsp;#00EEEE&nbsp;cyan2</td>
+          <td width="64" style="background:#00CDCD;">&nbsp;</td>
+          <td>&nbsp;#00CDCD&nbsp;cyan3</td>
+          <td width="64" style="background:#008B8B;">&nbsp;</td>
+          <td>&nbsp;#008B8B&nbsp;cyan4</td>
+          <td width="64" style="background:#00008B;">&nbsp;</td>
+          <td>&nbsp;#00008B&nbsp;darkblue</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#008B8B;">&nbsp;</td>
+          <td>&nbsp;#008B8B&nbsp;darkcyan</td>
+          <td width="64" style="background:#B8860B;">&nbsp;</td>
+          <td>&nbsp;#B8860B&nbsp;darkgoldenrod</td>
+          <td width="64" style="background:#FFB90F;">&nbsp;</td>
+          <td>&nbsp;#FFB90F&nbsp;darkgoldenrod1</td>
+          <td width="64" style="background:#EEAD0E;">&nbsp;</td>
+          <td>&nbsp;#EEAD0E&nbsp;darkgoldenrod2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CD950C;">&nbsp;</td>
+          <td>&nbsp;#CD950C&nbsp;darkgoldenrod3</td>
+          <td width="64" style="background:#8B6508;">&nbsp;</td>
+          <td>&nbsp;#8B6508&nbsp;darkgoldenrod4</td>
+          <td width="64" style="background:#A9A9A9;">&nbsp;</td>
+          <td>&nbsp;#A9A9A9&nbsp;darkgray</td>
+          <td width="64" style="background:#006400;">&nbsp;</td>
+          <td>&nbsp;#006400&nbsp;darkgreen</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#BDB76B;">&nbsp;</td>
+          <td>&nbsp;#BDB76B&nbsp;darkkhaki</td>
+          <td width="64" style="background:#8B008B;">&nbsp;</td>
+          <td>&nbsp;#8B008B&nbsp;darkmagenta</td>
+          <td width="64" style="background:#556B2F;">&nbsp;</td>
+          <td>&nbsp;#556B2F&nbsp;darkolivegreen</td>
+          <td width="64" style="background:#CAFF70;">&nbsp;</td>
+          <td>&nbsp;#CAFF70&nbsp;darkolivegreen1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#BCEE68;">&nbsp;</td>
+          <td>&nbsp;#BCEE68&nbsp;darkolivegreen2</td>
+          <td width="64" style="background:#A2CD5A;">&nbsp;</td>
+          <td>&nbsp;#A2CD5A&nbsp;darkolivegreen3</td>
+          <td width="64" style="background:#6E8B3D;">&nbsp;</td>
+          <td>&nbsp;#6E8B3D&nbsp;darkolivegreen4</td>
+          <td width="64" style="background:#FF8C00;">&nbsp;</td>
+          <td>&nbsp;#FF8C00&nbsp;darkorange</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF7F00;">&nbsp;</td>
+          <td>&nbsp;#FF7F00&nbsp;darkorange1</td>
+          <td width="64" style="background:#EE7600;">&nbsp;</td>
+          <td>&nbsp;#EE7600&nbsp;darkorange2</td>
+          <td width="64" style="background:#CD6600;">&nbsp;</td>
+          <td>&nbsp;#CD6600&nbsp;darkorange3</td>
+          <td width="64" style="background:#8B4500;">&nbsp;</td>
+          <td>&nbsp;#8B4500&nbsp;darkorange4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#9932CC;">&nbsp;</td>
+          <td>&nbsp;#9932CC&nbsp;darkorchid</td>
+          <td width="64" style="background:#BF3EFF;">&nbsp;</td>
+          <td>&nbsp;#BF3EFF&nbsp;darkorchid1</td>
+          <td width="64" style="background:#B23AEE;">&nbsp;</td>
+          <td>&nbsp;#B23AEE&nbsp;darkorchid2</td>
+          <td width="64" style="background:#9A32CD;">&nbsp;</td>
+          <td>&nbsp;#9A32CD&nbsp;darkorchid3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#68228B;">&nbsp;</td>
+          <td>&nbsp;#68228B&nbsp;darkorchid4</td>
+          <td width="64" style="background:#8B0000;">&nbsp;</td>
+          <td>&nbsp;#8B0000&nbsp;darkred</td>
+          <td width="64" style="background:#E9967A;">&nbsp;</td>
+          <td>&nbsp;#E9967A&nbsp;darksalmon</td>
+          <td width="64" style="background:#8FBC8F;">&nbsp;</td>
+          <td>&nbsp;#8FBC8F&nbsp;darkseagreen</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#C1FFC1;">&nbsp;</td>
+          <td>&nbsp;#C1FFC1&nbsp;darkseagreen1</td>
+          <td width="64" style="background:#B4EEB4;">&nbsp;</td>
+          <td>&nbsp;#B4EEB4&nbsp;darkseagreen2</td>
+          <td width="64" style="background:#9BCD9B;">&nbsp;</td>
+          <td>&nbsp;#9BCD9B&nbsp;darkseagreen3</td>
+          <td width="64" style="background:#698B69;">&nbsp;</td>
+          <td>&nbsp;#698B69&nbsp;darkseagreen4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#483D8B;">&nbsp;</td>
+          <td>&nbsp;#483D8B&nbsp;darkslateblue</td>
+          <td width="64" style="background:#2F4F4F;">&nbsp;</td>
+          <td>&nbsp;#2F4F4F&nbsp;darkslategray</td>
+          <td width="64" style="background:#97FFFF;">&nbsp;</td>
+          <td>&nbsp;#97FFFF&nbsp;darkslategray1</td>
+          <td width="64" style="background:#8DEEEE;">&nbsp;</td>
+          <td>&nbsp;#8DEEEE&nbsp;darkslategray2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#79CDCD;">&nbsp;</td>
+          <td>&nbsp;#79CDCD&nbsp;darkslategray3</td>
+          <td width="64" style="background:#528B8B;">&nbsp;</td>
+          <td>&nbsp;#528B8B&nbsp;darkslategray4</td>
+          <td width="64" style="background:#00CED1;">&nbsp;</td>
+          <td>&nbsp;#00CED1&nbsp;darkturquoise</td>
+          <td width="64" style="background:#9400D3;">&nbsp;</td>
+          <td>&nbsp;#9400D3&nbsp;darkviolet</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF1493;">&nbsp;</td>
+          <td>&nbsp;#FF1493&nbsp;deeppink</td>
+          <td width="64" style="background:#FF1493;">&nbsp;</td>
+          <td>&nbsp;#FF1493&nbsp;deeppink1</td>
+          <td width="64" style="background:#EE1289;">&nbsp;</td>
+          <td>&nbsp;#EE1289&nbsp;deeppink2</td>
+          <td width="64" style="background:#CD1076;">&nbsp;</td>
+          <td>&nbsp;#CD1076&nbsp;deeppink3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B0A50;">&nbsp;</td>
+          <td>&nbsp;#8B0A50&nbsp;deeppink4</td>
+          <td width="64" style="background:#00BFFF;">&nbsp;</td>
+          <td>&nbsp;#00BFFF&nbsp;deepskyblue</td>
+          <td width="64" style="background:#00BFFF;">&nbsp;</td>
+          <td>&nbsp;#00BFFF&nbsp;deepskyblue1</td>
+          <td width="64" style="background:#00B2EE;">&nbsp;</td>
+          <td>&nbsp;#00B2EE&nbsp;deepskyblue2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#009ACD;">&nbsp;</td>
+          <td>&nbsp;#009ACD&nbsp;deepskyblue3</td>
+          <td width="64" style="background:#00688B;">&nbsp;</td>
+          <td>&nbsp;#00688B&nbsp;deepskyblue4</td>
+          <td width="64" style="background:#696969;">&nbsp;</td>
+          <td>&nbsp;#696969&nbsp;dimgray</td>
+          <td width="64" style="background:#1E90FF;">&nbsp;</td>
+          <td>&nbsp;#1E90FF&nbsp;dodgerblue</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#1E90FF;">&nbsp;</td>
+          <td>&nbsp;#1E90FF&nbsp;dodgerblue1</td>
+          <td width="64" style="background:#1C86EE;">&nbsp;</td>
+          <td>&nbsp;#1C86EE&nbsp;dodgerblue2</td>
+          <td width="64" style="background:#1874CD;">&nbsp;</td>
+          <td>&nbsp;#1874CD&nbsp;dodgerblue3</td>
+          <td width="64" style="background:#104E8B;">&nbsp;</td>
+          <td>&nbsp;#104E8B&nbsp;dodgerblue4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#B22222;">&nbsp;</td>
+          <td>&nbsp;#B22222&nbsp;firebrick</td>
+          <td width="64" style="background:#FF3030;">&nbsp;</td>
+          <td>&nbsp;#FF3030&nbsp;firebrick1</td>
+          <td width="64" style="background:#EE2C2C;">&nbsp;</td>
+          <td>&nbsp;#EE2C2C&nbsp;firebrick2</td>
+          <td width="64" style="background:#CD2626;">&nbsp;</td>
+          <td>&nbsp;#CD2626&nbsp;firebrick3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B1A1A;">&nbsp;</td>
+          <td>&nbsp;#8B1A1A&nbsp;firebrick4</td>
+          <td width="64" style="background:#FFFAF0;">&nbsp;</td>
+          <td>&nbsp;#FFFAF0&nbsp;floralwhite</td>
+          <td width="64" style="background:#228B22;">&nbsp;</td>
+          <td>&nbsp;#228B22&nbsp;forestgreen</td>
+          <td width="64" style="background:#DCDCDC;">&nbsp;</td>
+          <td>&nbsp;#DCDCDC&nbsp;gainsboro</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#F8F8FF;">&nbsp;</td>
+          <td>&nbsp;#F8F8FF&nbsp;ghostwhite</td>
+          <td width="64" style="background:#FFD700;">&nbsp;</td>
+          <td>&nbsp;#FFD700&nbsp;gold</td>
+          <td width="64" style="background:#FFD700;">&nbsp;</td>
+          <td>&nbsp;#FFD700&nbsp;gold1</td>
+          <td width="64" style="background:#EEC900;">&nbsp;</td>
+          <td>&nbsp;#EEC900&nbsp;gold2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CDAD00;">&nbsp;</td>
+          <td>&nbsp;#CDAD00&nbsp;gold3</td>
+          <td width="64" style="background:#8B7500;">&nbsp;</td>
+          <td>&nbsp;#8B7500&nbsp;gold4</td>
+          <td width="64" style="background:#DAA520;">&nbsp;</td>
+          <td>&nbsp;#DAA520&nbsp;goldenrod</td>
+          <td width="64" style="background:#FFC125;">&nbsp;</td>
+          <td>&nbsp;#FFC125&nbsp;goldenrod1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EEB422;">&nbsp;</td>
+          <td>&nbsp;#EEB422&nbsp;goldenrod2</td>
+          <td width="64" style="background:#CD9B1D;">&nbsp;</td>
+          <td>&nbsp;#CD9B1D&nbsp;goldenrod3</td>
+          <td width="64" style="background:#8B6914;">&nbsp;</td>
+          <td>&nbsp;#8B6914&nbsp;goldenrod4</td>
+          <td width="64" style="background:#BEBEBE;">&nbsp;</td>
+          <td>&nbsp;#BEBEBE&nbsp;gray</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#000000;">&nbsp;</td>
+          <td>&nbsp;#000000&nbsp;gray0</td>
+          <td width="64" style="background:#030303;">&nbsp;</td>
+          <td>&nbsp;#030303&nbsp;gray1</td>
+          <td width="64" style="background:#1A1A1A;">&nbsp;</td>
+          <td>&nbsp;#1A1A1A&nbsp;gray10</td>
+          <td width="64" style="background:#FFFFFF;">&nbsp;</td>
+          <td>&nbsp;#FFFFFF&nbsp;gray100</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#1C1C1C;">&nbsp;</td>
+          <td>&nbsp;#1C1C1C&nbsp;gray11</td>
+          <td width="64" style="background:#1F1F1F;">&nbsp;</td>
+          <td>&nbsp;#1F1F1F&nbsp;gray12</td>
+          <td width="64" style="background:#212121;">&nbsp;</td>
+          <td>&nbsp;#212121&nbsp;gray13</td>
+          <td width="64" style="background:#242424;">&nbsp;</td>
+          <td>&nbsp;#242424&nbsp;gray14</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#262626;">&nbsp;</td>
+          <td>&nbsp;#262626&nbsp;gray15</td>
+          <td width="64" style="background:#292929;">&nbsp;</td>
+          <td>&nbsp;#292929&nbsp;gray16</td>
+          <td width="64" style="background:#2B2B2B;">&nbsp;</td>
+          <td>&nbsp;#2B2B2B&nbsp;gray17</td>
+          <td width="64" style="background:#2E2E2E;">&nbsp;</td>
+          <td>&nbsp;#2E2E2E&nbsp;gray18</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#303030;">&nbsp;</td>
+          <td>&nbsp;#303030&nbsp;gray19</td>
+          <td width="64" style="background:#050505;">&nbsp;</td>
+          <td>&nbsp;#050505&nbsp;gray2</td>
+          <td width="64" style="background:#333333;">&nbsp;</td>
+          <td>&nbsp;#333333&nbsp;gray20</td>
+          <td width="64" style="background:#363636;">&nbsp;</td>
+          <td>&nbsp;#363636&nbsp;gray21</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#383838;">&nbsp;</td>
+          <td>&nbsp;#383838&nbsp;gray22</td>
+          <td width="64" style="background:#3B3B3B;">&nbsp;</td>
+          <td>&nbsp;#3B3B3B&nbsp;gray23</td>
+          <td width="64" style="background:#3D3D3D;">&nbsp;</td>
+          <td>&nbsp;#3D3D3D&nbsp;gray24</td>
+          <td width="64" style="background:#404040;">&nbsp;</td>
+          <td>&nbsp;#404040&nbsp;gray25</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#424242;">&nbsp;</td>
+          <td>&nbsp;#424242&nbsp;gray26</td>
+          <td width="64" style="background:#454545;">&nbsp;</td>
+          <td>&nbsp;#454545&nbsp;gray27</td>
+          <td width="64" style="background:#474747;">&nbsp;</td>
+          <td>&nbsp;#474747&nbsp;gray28</td>
+          <td width="64" style="background:#4A4A4A;">&nbsp;</td>
+          <td>&nbsp;#4A4A4A&nbsp;gray29</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#080808;">&nbsp;</td>
+          <td>&nbsp;#080808&nbsp;gray3</td>
+          <td width="64" style="background:#4D4D4D;">&nbsp;</td>
+          <td>&nbsp;#4D4D4D&nbsp;gray30</td>
+          <td width="64" style="background:#4F4F4F;">&nbsp;</td>
+          <td>&nbsp;#4F4F4F&nbsp;gray31</td>
+          <td width="64" style="background:#525252;">&nbsp;</td>
+          <td>&nbsp;#525252&nbsp;gray32</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#545454;">&nbsp;</td>
+          <td>&nbsp;#545454&nbsp;gray33</td>
+          <td width="64" style="background:#575757;">&nbsp;</td>
+          <td>&nbsp;#575757&nbsp;gray34</td>
+          <td width="64" style="background:#595959;">&nbsp;</td>
+          <td>&nbsp;#595959&nbsp;gray35</td>
+          <td width="64" style="background:#5C5C5C;">&nbsp;</td>
+          <td>&nbsp;#5C5C5C&nbsp;gray36</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#5E5E5E;">&nbsp;</td>
+          <td>&nbsp;#5E5E5E&nbsp;gray37</td>
+          <td width="64" style="background:#616161;">&nbsp;</td>
+          <td>&nbsp;#616161&nbsp;gray38</td>
+          <td width="64" style="background:#636363;">&nbsp;</td>
+          <td>&nbsp;#636363&nbsp;gray39</td>
+          <td width="64" style="background:#0A0A0A;">&nbsp;</td>
+          <td>&nbsp;#0A0A0A&nbsp;gray4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#666666;">&nbsp;</td>
+          <td>&nbsp;#666666&nbsp;gray40</td>
+          <td width="64" style="background:#696969;">&nbsp;</td>
+          <td>&nbsp;#696969&nbsp;gray41</td>
+          <td width="64" style="background:#6B6B6B;">&nbsp;</td>
+          <td>&nbsp;#6B6B6B&nbsp;gray42</td>
+          <td width="64" style="background:#6E6E6E;">&nbsp;</td>
+          <td>&nbsp;#6E6E6E&nbsp;gray43</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#707070;">&nbsp;</td>
+          <td>&nbsp;#707070&nbsp;gray44</td>
+          <td width="64" style="background:#737373;">&nbsp;</td>
+          <td>&nbsp;#737373&nbsp;gray45</td>
+          <td width="64" style="background:#757575;">&nbsp;</td>
+          <td>&nbsp;#757575&nbsp;gray46</td>
+          <td width="64" style="background:#787878;">&nbsp;</td>
+          <td>&nbsp;#787878&nbsp;gray47</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#7A7A7A;">&nbsp;</td>
+          <td>&nbsp;#7A7A7A&nbsp;gray48</td>
+          <td width="64" style="background:#7D7D7D;">&nbsp;</td>
+          <td>&nbsp;#7D7D7D&nbsp;gray49</td>
+          <td width="64" style="background:#0D0D0D;">&nbsp;</td>
+          <td>&nbsp;#0D0D0D&nbsp;gray5</td>
+          <td width="64" style="background:#7F7F7F;">&nbsp;</td>
+          <td>&nbsp;#7F7F7F&nbsp;gray50</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#828282;">&nbsp;</td>
+          <td>&nbsp;#828282&nbsp;gray51</td>
+          <td width="64" style="background:#858585;">&nbsp;</td>
+          <td>&nbsp;#858585&nbsp;gray52</td>
+          <td width="64" style="background:#878787;">&nbsp;</td>
+          <td>&nbsp;#878787&nbsp;gray53</td>
+          <td width="64" style="background:#8A8A8A;">&nbsp;</td>
+          <td>&nbsp;#8A8A8A&nbsp;gray54</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8C8C8C;">&nbsp;</td>
+          <td>&nbsp;#8C8C8C&nbsp;gray55</td>
+          <td width="64" style="background:#8F8F8F;">&nbsp;</td>
+          <td>&nbsp;#8F8F8F&nbsp;gray56</td>
+          <td width="64" style="background:#919191;">&nbsp;</td>
+          <td>&nbsp;#919191&nbsp;gray57</td>
+          <td width="64" style="background:#949494;">&nbsp;</td>
+          <td>&nbsp;#949494&nbsp;gray58</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#969696;">&nbsp;</td>
+          <td>&nbsp;#969696&nbsp;gray59</td>
+          <td width="64" style="background:#0F0F0F;">&nbsp;</td>
+          <td>&nbsp;#0F0F0F&nbsp;gray6</td>
+          <td width="64" style="background:#999999;">&nbsp;</td>
+          <td>&nbsp;#999999&nbsp;gray60</td>
+          <td width="64" style="background:#9C9C9C;">&nbsp;</td>
+          <td>&nbsp;#9C9C9C&nbsp;gray61</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#9E9E9E;">&nbsp;</td>
+          <td>&nbsp;#9E9E9E&nbsp;gray62</td>
+          <td width="64" style="background:#A1A1A1;">&nbsp;</td>
+          <td>&nbsp;#A1A1A1&nbsp;gray63</td>
+          <td width="64" style="background:#A3A3A3;">&nbsp;</td>
+          <td>&nbsp;#A3A3A3&nbsp;gray64</td>
+          <td width="64" style="background:#A6A6A6;">&nbsp;</td>
+          <td>&nbsp;#A6A6A6&nbsp;gray65</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#A8A8A8;">&nbsp;</td>
+          <td>&nbsp;#A8A8A8&nbsp;gray66</td>
+          <td width="64" style="background:#ABABAB;">&nbsp;</td>
+          <td>&nbsp;#ABABAB&nbsp;gray67</td>
+          <td width="64" style="background:#ADADAD;">&nbsp;</td>
+          <td>&nbsp;#ADADAD&nbsp;gray68</td>
+          <td width="64" style="background:#B0B0B0;">&nbsp;</td>
+          <td>&nbsp;#B0B0B0&nbsp;gray69</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#121212;">&nbsp;</td>
+          <td>&nbsp;#121212&nbsp;gray7</td>
+          <td width="64" style="background:#B3B3B3;">&nbsp;</td>
+          <td>&nbsp;#B3B3B3&nbsp;gray70</td>
+          <td width="64" style="background:#B5B5B5;">&nbsp;</td>
+          <td>&nbsp;#B5B5B5&nbsp;gray71</td>
+          <td width="64" style="background:#B8B8B8;">&nbsp;</td>
+          <td>&nbsp;#B8B8B8&nbsp;gray72</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#BABABA;">&nbsp;</td>
+          <td>&nbsp;#BABABA&nbsp;gray73</td>
+          <td width="64" style="background:#BDBDBD;">&nbsp;</td>
+          <td>&nbsp;#BDBDBD&nbsp;gray74</td>
+          <td width="64" style="background:#BFBFBF;">&nbsp;</td>
+          <td>&nbsp;#BFBFBF&nbsp;gray75</td>
+          <td width="64" style="background:#C2C2C2;">&nbsp;</td>
+          <td>&nbsp;#C2C2C2&nbsp;gray76</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#C4C4C4;">&nbsp;</td>
+          <td>&nbsp;#C4C4C4&nbsp;gray77</td>
+          <td width="64" style="background:#C7C7C7;">&nbsp;</td>
+          <td>&nbsp;#C7C7C7&nbsp;gray78</td>
+          <td width="64" style="background:#C9C9C9;">&nbsp;</td>
+          <td>&nbsp;#C9C9C9&nbsp;gray79</td>
+          <td width="64" style="background:#141414;">&nbsp;</td>
+          <td>&nbsp;#141414&nbsp;gray8</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CCCCCC;">&nbsp;</td>
+          <td>&nbsp;#CCCCCC&nbsp;gray80</td>
+          <td width="64" style="background:#CFCFCF;">&nbsp;</td>
+          <td>&nbsp;#CFCFCF&nbsp;gray81</td>
+          <td width="64" style="background:#D1D1D1;">&nbsp;</td>
+          <td>&nbsp;#D1D1D1&nbsp;gray82</td>
+          <td width="64" style="background:#D4D4D4;">&nbsp;</td>
+          <td>&nbsp;#D4D4D4&nbsp;gray83</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#D6D6D6;">&nbsp;</td>
+          <td>&nbsp;#D6D6D6&nbsp;gray84</td>
+          <td width="64" style="background:#D9D9D9;">&nbsp;</td>
+          <td>&nbsp;#D9D9D9&nbsp;gray85</td>
+          <td width="64" style="background:#DBDBDB;">&nbsp;</td>
+          <td>&nbsp;#DBDBDB&nbsp;gray86</td>
+          <td width="64" style="background:#DEDEDE;">&nbsp;</td>
+          <td>&nbsp;#DEDEDE&nbsp;gray87</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#E0E0E0;">&nbsp;</td>
+          <td>&nbsp;#E0E0E0&nbsp;gray88</td>
+          <td width="64" style="background:#E3E3E3;">&nbsp;</td>
+          <td>&nbsp;#E3E3E3&nbsp;gray89</td>
+          <td width="64" style="background:#171717;">&nbsp;</td>
+          <td>&nbsp;#171717&nbsp;gray9</td>
+          <td width="64" style="background:#E5E5E5;">&nbsp;</td>
+          <td>&nbsp;#E5E5E5&nbsp;gray90</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#E8E8E8;">&nbsp;</td>
+          <td>&nbsp;#E8E8E8&nbsp;gray91</td>
+          <td width="64" style="background:#EBEBEB;">&nbsp;</td>
+          <td>&nbsp;#EBEBEB&nbsp;gray92</td>
+          <td width="64" style="background:#EDEDED;">&nbsp;</td>
+          <td>&nbsp;#EDEDED&nbsp;gray93</td>
+          <td width="64" style="background:#F0F0F0;">&nbsp;</td>
+          <td>&nbsp;#F0F0F0&nbsp;gray94</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#F2F2F2;">&nbsp;</td>
+          <td>&nbsp;#F2F2F2&nbsp;gray95</td>
+          <td width="64" style="background:#F5F5F5;">&nbsp;</td>
+          <td>&nbsp;#F5F5F5&nbsp;gray96</td>
+          <td width="64" style="background:#F7F7F7;">&nbsp;</td>
+          <td>&nbsp;#F7F7F7&nbsp;gray97</td>
+          <td width="64" style="background:#FAFAFA;">&nbsp;</td>
+          <td>&nbsp;#FAFAFA&nbsp;gray98</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FCFCFC;">&nbsp;</td>
+          <td>&nbsp;#FCFCFC&nbsp;gray99</td>
+          <td width="64" style="background:#00FF00;">&nbsp;</td>
+          <td>&nbsp;#00FF00&nbsp;green</td>
+          <td width="64" style="background:#00FF00;">&nbsp;</td>
+          <td>&nbsp;#00FF00&nbsp;green1</td>
+          <td width="64" style="background:#00EE00;">&nbsp;</td>
+          <td>&nbsp;#00EE00&nbsp;green2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#00CD00;">&nbsp;</td>
+          <td>&nbsp;#00CD00&nbsp;green3</td>
+          <td width="64" style="background:#008B00;">&nbsp;</td>
+          <td>&nbsp;#008B00&nbsp;green4</td>
+          <td width="64" style="background:#ADFF2F;">&nbsp;</td>
+          <td>&nbsp;#ADFF2F&nbsp;greenyellow</td>
+          <td width="64" style="background:#F0FFF0;">&nbsp;</td>
+          <td>&nbsp;#F0FFF0&nbsp;honeydew</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#F0FFF0;">&nbsp;</td>
+          <td>&nbsp;#F0FFF0&nbsp;honeydew1</td>
+          <td width="64" style="background:#E0EEE0;">&nbsp;</td>
+          <td>&nbsp;#E0EEE0&nbsp;honeydew2</td>
+          <td width="64" style="background:#C1CDC1;">&nbsp;</td>
+          <td>&nbsp;#C1CDC1&nbsp;honeydew3</td>
+          <td width="64" style="background:#838B83;">&nbsp;</td>
+          <td>&nbsp;#838B83&nbsp;honeydew4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF69B4;">&nbsp;</td>
+          <td>&nbsp;#FF69B4&nbsp;hotpink</td>
+          <td width="64" style="background:#FF6EB4;">&nbsp;</td>
+          <td>&nbsp;#FF6EB4&nbsp;hotpink1</td>
+          <td width="64" style="background:#EE6AA7;">&nbsp;</td>
+          <td>&nbsp;#EE6AA7&nbsp;hotpink2</td>
+          <td width="64" style="background:#CD6090;">&nbsp;</td>
+          <td>&nbsp;#CD6090&nbsp;hotpink3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B3A62;">&nbsp;</td>
+          <td>&nbsp;#8B3A62&nbsp;hotpink4</td>
+          <td width="64" style="background:#CD5C5C;">&nbsp;</td>
+          <td>&nbsp;#CD5C5C&nbsp;indianred</td>
+          <td width="64" style="background:#FF6A6A;">&nbsp;</td>
+          <td>&nbsp;#FF6A6A&nbsp;indianred1</td>
+          <td width="64" style="background:#EE6363;">&nbsp;</td>
+          <td>&nbsp;#EE6363&nbsp;indianred2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CD5555;">&nbsp;</td>
+          <td>&nbsp;#CD5555&nbsp;indianred3</td>
+          <td width="64" style="background:#8B3A3A;">&nbsp;</td>
+          <td>&nbsp;#8B3A3A&nbsp;indianred4</td>
+          <td width="64" style="background:#FFFFF0;">&nbsp;</td>
+          <td>&nbsp;#FFFFF0&nbsp;ivory</td>
+          <td width="64" style="background:#FFFFF0;">&nbsp;</td>
+          <td>&nbsp;#FFFFF0&nbsp;ivory1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EEEEE0;">&nbsp;</td>
+          <td>&nbsp;#EEEEE0&nbsp;ivory2</td>
+          <td width="64" style="background:#CDCDC1;">&nbsp;</td>
+          <td>&nbsp;#CDCDC1&nbsp;ivory3</td>
+          <td width="64" style="background:#8B8B83;">&nbsp;</td>
+          <td>&nbsp;#8B8B83&nbsp;ivory4</td>
+          <td width="64" style="background:#F0E68C;">&nbsp;</td>
+          <td>&nbsp;#F0E68C&nbsp;khaki</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFF68F;">&nbsp;</td>
+          <td>&nbsp;#FFF68F&nbsp;khaki1</td>
+          <td width="64" style="background:#EEE685;">&nbsp;</td>
+          <td>&nbsp;#EEE685&nbsp;khaki2</td>
+          <td width="64" style="background:#CDC673;">&nbsp;</td>
+          <td>&nbsp;#CDC673&nbsp;khaki3</td>
+          <td width="64" style="background:#8B864E;">&nbsp;</td>
+          <td>&nbsp;#8B864E&nbsp;khaki4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#E6E6FA;">&nbsp;</td>
+          <td>&nbsp;#E6E6FA&nbsp;lavender</td>
+          <td width="64" style="background:#FFF0F5;">&nbsp;</td>
+          <td>&nbsp;#FFF0F5&nbsp;lavenderblush</td>
+          <td width="64" style="background:#FFF0F5;">&nbsp;</td>
+          <td>&nbsp;#FFF0F5&nbsp;lavenderblush1</td>
+          <td width="64" style="background:#EEE0E5;">&nbsp;</td>
+          <td>&nbsp;#EEE0E5&nbsp;lavenderblush2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CDC1C5;">&nbsp;</td>
+          <td>&nbsp;#CDC1C5&nbsp;lavenderblush3</td>
+          <td width="64" style="background:#8B8386;">&nbsp;</td>
+          <td>&nbsp;#8B8386&nbsp;lavenderblush4</td>
+          <td width="64" style="background:#7CFC00;">&nbsp;</td>
+          <td>&nbsp;#7CFC00&nbsp;lawngreen</td>
+          <td width="64" style="background:#FFFACD;">&nbsp;</td>
+          <td>&nbsp;#FFFACD&nbsp;lemonchiffon</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFFACD;">&nbsp;</td>
+          <td>&nbsp;#FFFACD&nbsp;lemonchiffon1</td>
+          <td width="64" style="background:#EEE9BF;">&nbsp;</td>
+          <td>&nbsp;#EEE9BF&nbsp;lemonchiffon2</td>
+          <td width="64" style="background:#CDC9A5;">&nbsp;</td>
+          <td>&nbsp;#CDC9A5&nbsp;lemonchiffon3</td>
+          <td width="64" style="background:#8B8970;">&nbsp;</td>
+          <td>&nbsp;#8B8970&nbsp;lemonchiffon4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#ADD8E6;">&nbsp;</td>
+          <td>&nbsp;#ADD8E6&nbsp;lightblue</td>
+          <td width="64" style="background:#BFEFFF;">&nbsp;</td>
+          <td>&nbsp;#BFEFFF&nbsp;lightblue1</td>
+          <td width="64" style="background:#B2DFEE;">&nbsp;</td>
+          <td>&nbsp;#B2DFEE&nbsp;lightblue2</td>
+          <td width="64" style="background:#9AC0CD;">&nbsp;</td>
+          <td>&nbsp;#9AC0CD&nbsp;lightblue3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#68838B;">&nbsp;</td>
+          <td>&nbsp;#68838B&nbsp;lightblue4</td>
+          <td width="64" style="background:#F08080;">&nbsp;</td>
+          <td>&nbsp;#F08080&nbsp;lightcoral</td>
+          <td width="64" style="background:#E0FFFF;">&nbsp;</td>
+          <td>&nbsp;#E0FFFF&nbsp;lightcyan</td>
+          <td width="64" style="background:#E0FFFF;">&nbsp;</td>
+          <td>&nbsp;#E0FFFF&nbsp;lightcyan1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#D1EEEE;">&nbsp;</td>
+          <td>&nbsp;#D1EEEE&nbsp;lightcyan2</td>
+          <td width="64" style="background:#B4CDCD;">&nbsp;</td>
+          <td>&nbsp;#B4CDCD&nbsp;lightcyan3</td>
+          <td width="64" style="background:#7A8B8B;">&nbsp;</td>
+          <td>&nbsp;#7A8B8B&nbsp;lightcyan4</td>
+          <td width="64" style="background:#EEDD82;">&nbsp;</td>
+          <td>&nbsp;#EEDD82&nbsp;lightgoldenrod</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFEC8B;">&nbsp;</td>
+          <td>&nbsp;#FFEC8B&nbsp;lightgoldenrod1</td>
+          <td width="64" style="background:#EEDC82;">&nbsp;</td>
+          <td>&nbsp;#EEDC82&nbsp;lightgoldenrod2</td>
+          <td width="64" style="background:#CDBE70;">&nbsp;</td>
+          <td>&nbsp;#CDBE70&nbsp;lightgoldenrod3</td>
+          <td width="64" style="background:#8B814C;">&nbsp;</td>
+          <td>&nbsp;#8B814C&nbsp;lightgoldenrod4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FAFAD2;">&nbsp;</td>
+          <td>&nbsp;#FAFAD2&nbsp;lightgoldenrodyellow</td>
+          <td width="64" style="background:#D3D3D3;">&nbsp;</td>
+          <td>&nbsp;#D3D3D3&nbsp;lightgray</td>
+          <td width="64" style="background:#90EE90;">&nbsp;</td>
+          <td>&nbsp;#90EE90&nbsp;lightgreen</td>
+          <td width="64" style="background:#FFB6C1;">&nbsp;</td>
+          <td>&nbsp;#FFB6C1&nbsp;lightpink</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFAEB9;">&nbsp;</td>
+          <td>&nbsp;#FFAEB9&nbsp;lightpink1</td>
+          <td width="64" style="background:#EEA2AD;">&nbsp;</td>
+          <td>&nbsp;#EEA2AD&nbsp;lightpink2</td>
+          <td width="64" style="background:#CD8C95;">&nbsp;</td>
+          <td>&nbsp;#CD8C95&nbsp;lightpink3</td>
+          <td width="64" style="background:#8B5F65;">&nbsp;</td>
+          <td>&nbsp;#8B5F65&nbsp;lightpink4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFA07A;">&nbsp;</td>
+          <td>&nbsp;#FFA07A&nbsp;lightsalmon</td>
+          <td width="64" style="background:#FFA07A;">&nbsp;</td>
+          <td>&nbsp;#FFA07A&nbsp;lightsalmon1</td>
+          <td width="64" style="background:#EE9572;">&nbsp;</td>
+          <td>&nbsp;#EE9572&nbsp;lightsalmon2</td>
+          <td width="64" style="background:#CD8162;">&nbsp;</td>
+          <td>&nbsp;#CD8162&nbsp;lightsalmon3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B5742;">&nbsp;</td>
+          <td>&nbsp;#8B5742&nbsp;lightsalmon4</td>
+          <td width="64" style="background:#20B2AA;">&nbsp;</td>
+          <td>&nbsp;#20B2AA&nbsp;lightseagreen</td>
+          <td width="64" style="background:#87CEFA;">&nbsp;</td>
+          <td>&nbsp;#87CEFA&nbsp;lightskyblue</td>
+          <td width="64" style="background:#B0E2FF;">&nbsp;</td>
+          <td>&nbsp;#B0E2FF&nbsp;lightskyblue1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#A4D3EE;">&nbsp;</td>
+          <td>&nbsp;#A4D3EE&nbsp;lightskyblue2</td>
+          <td width="64" style="background:#8DB6CD;">&nbsp;</td>
+          <td>&nbsp;#8DB6CD&nbsp;lightskyblue3</td>
+          <td width="64" style="background:#607B8B;">&nbsp;</td>
+          <td>&nbsp;#607B8B&nbsp;lightskyblue4</td>
+          <td width="64" style="background:#8470FF;">&nbsp;</td>
+          <td>&nbsp;#8470FF&nbsp;lightslateblue</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#778899;">&nbsp;</td>
+          <td>&nbsp;#778899&nbsp;lightslategray</td>
+          <td width="64" style="background:#B0C4DE;">&nbsp;</td>
+          <td>&nbsp;#B0C4DE&nbsp;lightsteelblue</td>
+          <td width="64" style="background:#CAE1FF;">&nbsp;</td>
+          <td>&nbsp;#CAE1FF&nbsp;lightsteelblue1</td>
+          <td width="64" style="background:#BCD2EE;">&nbsp;</td>
+          <td>&nbsp;#BCD2EE&nbsp;lightsteelblue2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#A2B5CD;">&nbsp;</td>
+          <td>&nbsp;#A2B5CD&nbsp;lightsteelblue3</td>
+          <td width="64" style="background:#6E7B8B;">&nbsp;</td>
+          <td>&nbsp;#6E7B8B&nbsp;lightsteelblue4</td>
+          <td width="64" style="background:#FFFFE0;">&nbsp;</td>
+          <td>&nbsp;#FFFFE0&nbsp;lightyellow</td>
+          <td width="64" style="background:#FFFFE0;">&nbsp;</td>
+          <td>&nbsp;#FFFFE0&nbsp;lightyellow1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EEEED1;">&nbsp;</td>
+          <td>&nbsp;#EEEED1&nbsp;lightyellow2</td>
+          <td width="64" style="background:#CDCDB4;">&nbsp;</td>
+          <td>&nbsp;#CDCDB4&nbsp;lightyellow3</td>
+          <td width="64" style="background:#8B8B7A;">&nbsp;</td>
+          <td>&nbsp;#8B8B7A&nbsp;lightyellow4</td>
+          <td width="64" style="background:#32CD32;">&nbsp;</td>
+          <td>&nbsp;#32CD32&nbsp;limegreen</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FAF0E6;">&nbsp;</td>
+          <td>&nbsp;#FAF0E6&nbsp;linen</td>
+          <td width="64" style="background:#FF00FF;">&nbsp;</td>
+          <td>&nbsp;#FF00FF&nbsp;magenta</td>
+          <td width="64" style="background:#FF00FF;">&nbsp;</td>
+          <td>&nbsp;#FF00FF&nbsp;magenta1</td>
+          <td width="64" style="background:#EE00EE;">&nbsp;</td>
+          <td>&nbsp;#EE00EE&nbsp;magenta2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CD00CD;">&nbsp;</td>
+          <td>&nbsp;#CD00CD&nbsp;magenta3</td>
+          <td width="64" style="background:#8B008B;">&nbsp;</td>
+          <td>&nbsp;#8B008B&nbsp;magenta4</td>
+          <td width="64" style="background:#B03060;">&nbsp;</td>
+          <td>&nbsp;#B03060&nbsp;maroon</td>
+          <td width="64" style="background:#FF34B3;">&nbsp;</td>
+          <td>&nbsp;#FF34B3&nbsp;maroon1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EE30A7;">&nbsp;</td>
+          <td>&nbsp;#EE30A7&nbsp;maroon2</td>
+          <td width="64" style="background:#CD2990;">&nbsp;</td>
+          <td>&nbsp;#CD2990&nbsp;maroon3</td>
+          <td width="64" style="background:#8B1C62;">&nbsp;</td>
+          <td>&nbsp;#8B1C62&nbsp;maroon4</td>
+          <td width="64" style="background:#66CDAA;">&nbsp;</td>
+          <td>&nbsp;#66CDAA&nbsp;mediumaquamarine</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#0000CD;">&nbsp;</td>
+          <td>&nbsp;#0000CD&nbsp;mediumblue</td>
+          <td width="64" style="background:#BA55D3;">&nbsp;</td>
+          <td>&nbsp;#BA55D3&nbsp;mediumorchid</td>
+          <td width="64" style="background:#E066FF;">&nbsp;</td>
+          <td>&nbsp;#E066FF&nbsp;mediumorchid1</td>
+          <td width="64" style="background:#D15FEE;">&nbsp;</td>
+          <td>&nbsp;#D15FEE&nbsp;mediumorchid2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#B452CD;">&nbsp;</td>
+          <td>&nbsp;#B452CD&nbsp;mediumorchid3</td>
+          <td width="64" style="background:#7A378B;">&nbsp;</td>
+          <td>&nbsp;#7A378B&nbsp;mediumorchid4</td>
+          <td width="64" style="background:#9370DB;">&nbsp;</td>
+          <td>&nbsp;#9370DB&nbsp;mediumpurple</td>
+          <td width="64" style="background:#AB82FF;">&nbsp;</td>
+          <td>&nbsp;#AB82FF&nbsp;mediumpurple1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#9F79EE;">&nbsp;</td>
+          <td>&nbsp;#9F79EE&nbsp;mediumpurple2</td>
+          <td width="64" style="background:#8968CD;">&nbsp;</td>
+          <td>&nbsp;#8968CD&nbsp;mediumpurple3</td>
+          <td width="64" style="background:#5D478B;">&nbsp;</td>
+          <td>&nbsp;#5D478B&nbsp;mediumpurple4</td>
+          <td width="64" style="background:#3CB371;">&nbsp;</td>
+          <td>&nbsp;#3CB371&nbsp;mediumseagreen</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#7B68EE;">&nbsp;</td>
+          <td>&nbsp;#7B68EE&nbsp;mediumslateblue</td>
+          <td width="64" style="background:#00FA9A;">&nbsp;</td>
+          <td>&nbsp;#00FA9A&nbsp;mediumspringgreen</td>
+          <td width="64" style="background:#48D1CC;">&nbsp;</td>
+          <td>&nbsp;#48D1CC&nbsp;mediumturquoise</td>
+          <td width="64" style="background:#C71585;">&nbsp;</td>
+          <td>&nbsp;#C71585&nbsp;mediumvioletred</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#191970;">&nbsp;</td>
+          <td>&nbsp;#191970&nbsp;midnightblue</td>
+          <td width="64" style="background:#F5FFFA;">&nbsp;</td>
+          <td>&nbsp;#F5FFFA&nbsp;mintcream</td>
+          <td width="64" style="background:#FFE4E1;">&nbsp;</td>
+          <td>&nbsp;#FFE4E1&nbsp;mistyrose</td>
+          <td width="64" style="background:#FFE4E1;">&nbsp;</td>
+          <td>&nbsp;#FFE4E1&nbsp;mistyrose1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EED5D2;">&nbsp;</td>
+          <td>&nbsp;#EED5D2&nbsp;mistyrose2</td>
+          <td width="64" style="background:#CDB7B5;">&nbsp;</td>
+          <td>&nbsp;#CDB7B5&nbsp;mistyrose3</td>
+          <td width="64" style="background:#8B7D7B;">&nbsp;</td>
+          <td>&nbsp;#8B7D7B&nbsp;mistyrose4</td>
+          <td width="64" style="background:#FFE4B5;">&nbsp;</td>
+          <td>&nbsp;#FFE4B5&nbsp;moccasin</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFDEAD;">&nbsp;</td>
+          <td>&nbsp;#FFDEAD&nbsp;navajowhite</td>
+          <td width="64" style="background:#FFDEAD;">&nbsp;</td>
+          <td>&nbsp;#FFDEAD&nbsp;navajowhite1</td>
+          <td width="64" style="background:#EECFA1;">&nbsp;</td>
+          <td>&nbsp;#EECFA1&nbsp;navajowhite2</td>
+          <td width="64" style="background:#CDB38B;">&nbsp;</td>
+          <td>&nbsp;#CDB38B&nbsp;navajowhite3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B795E;">&nbsp;</td>
+          <td>&nbsp;#8B795E&nbsp;navajowhite4</td>
+          <td width="64" style="background:#000080;">&nbsp;</td>
+          <td>&nbsp;#000080&nbsp;navy</td>
+          <td width="64" style="background:#000080;">&nbsp;</td>
+          <td>&nbsp;#000080&nbsp;navyblue</td>
+          <td width="64" style="background:#FDF5E6;">&nbsp;</td>
+          <td>&nbsp;#FDF5E6&nbsp;oldlace</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#6B8E23;">&nbsp;</td>
+          <td>&nbsp;#6B8E23&nbsp;olivedrab</td>
+          <td width="64" style="background:#C0FF3E;">&nbsp;</td>
+          <td>&nbsp;#C0FF3E&nbsp;olivedrab1</td>
+          <td width="64" style="background:#B3EE3A;">&nbsp;</td>
+          <td>&nbsp;#B3EE3A&nbsp;olivedrab2</td>
+          <td width="64" style="background:#9ACD32;">&nbsp;</td>
+          <td>&nbsp;#9ACD32&nbsp;olivedrab3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#698B22;">&nbsp;</td>
+          <td>&nbsp;#698B22&nbsp;olivedrab4</td>
+          <td width="64" style="background:#FFA500;">&nbsp;</td>
+          <td>&nbsp;#FFA500&nbsp;orange</td>
+          <td width="64" style="background:#FFA500;">&nbsp;</td>
+          <td>&nbsp;#FFA500&nbsp;orange1</td>
+          <td width="64" style="background:#EE9A00;">&nbsp;</td>
+          <td>&nbsp;#EE9A00&nbsp;orange2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CD8500;">&nbsp;</td>
+          <td>&nbsp;#CD8500&nbsp;orange3</td>
+          <td width="64" style="background:#8B5A00;">&nbsp;</td>
+          <td>&nbsp;#8B5A00&nbsp;orange4</td>
+          <td width="64" style="background:#FF4500;">&nbsp;</td>
+          <td>&nbsp;#FF4500&nbsp;orangered</td>
+          <td width="64" style="background:#FF4500;">&nbsp;</td>
+          <td>&nbsp;#FF4500&nbsp;orangered1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EE4000;">&nbsp;</td>
+          <td>&nbsp;#EE4000&nbsp;orangered2</td>
+          <td width="64" style="background:#CD3700;">&nbsp;</td>
+          <td>&nbsp;#CD3700&nbsp;orangered3</td>
+          <td width="64" style="background:#8B2500;">&nbsp;</td>
+          <td>&nbsp;#8B2500&nbsp;orangered4</td>
+          <td width="64" style="background:#DA70D6;">&nbsp;</td>
+          <td>&nbsp;#DA70D6&nbsp;orchid</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF83FA;">&nbsp;</td>
+          <td>&nbsp;#FF83FA&nbsp;orchid1</td>
+          <td width="64" style="background:#EE7AE9;">&nbsp;</td>
+          <td>&nbsp;#EE7AE9&nbsp;orchid2</td>
+          <td width="64" style="background:#CD69C9;">&nbsp;</td>
+          <td>&nbsp;#CD69C9&nbsp;orchid3</td>
+          <td width="64" style="background:#8B4789;">&nbsp;</td>
+          <td>&nbsp;#8B4789&nbsp;orchid4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EEE8AA;">&nbsp;</td>
+          <td>&nbsp;#EEE8AA&nbsp;palegoldenrod</td>
+          <td width="64" style="background:#98FB98;">&nbsp;</td>
+          <td>&nbsp;#98FB98&nbsp;palegreen</td>
+          <td width="64" style="background:#9AFF9A;">&nbsp;</td>
+          <td>&nbsp;#9AFF9A&nbsp;palegreen1</td>
+          <td width="64" style="background:#90EE90;">&nbsp;</td>
+          <td>&nbsp;#90EE90&nbsp;palegreen2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#7CCD7C;">&nbsp;</td>
+          <td>&nbsp;#7CCD7C&nbsp;palegreen3</td>
+          <td width="64" style="background:#548B54;">&nbsp;</td>
+          <td>&nbsp;#548B54&nbsp;palegreen4</td>
+          <td width="64" style="background:#AFEEEE;">&nbsp;</td>
+          <td>&nbsp;#AFEEEE&nbsp;paleturquoise</td>
+          <td width="64" style="background:#BBFFFF;">&nbsp;</td>
+          <td>&nbsp;#BBFFFF&nbsp;paleturquoise1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#AEEEEE;">&nbsp;</td>
+          <td>&nbsp;#AEEEEE&nbsp;paleturquoise2</td>
+          <td width="64" style="background:#96CDCD;">&nbsp;</td>
+          <td>&nbsp;#96CDCD&nbsp;paleturquoise3</td>
+          <td width="64" style="background:#668B8B;">&nbsp;</td>
+          <td>&nbsp;#668B8B&nbsp;paleturquoise4</td>
+          <td width="64" style="background:#DB7093;">&nbsp;</td>
+          <td>&nbsp;#DB7093&nbsp;palevioletred</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF82AB;">&nbsp;</td>
+          <td>&nbsp;#FF82AB&nbsp;palevioletred1</td>
+          <td width="64" style="background:#EE799F;">&nbsp;</td>
+          <td>&nbsp;#EE799F&nbsp;palevioletred2</td>
+          <td width="64" style="background:#CD6889;">&nbsp;</td>
+          <td>&nbsp;#CD6889&nbsp;palevioletred3</td>
+          <td width="64" style="background:#8B475D;">&nbsp;</td>
+          <td>&nbsp;#8B475D&nbsp;palevioletred4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFEFD5;">&nbsp;</td>
+          <td>&nbsp;#FFEFD5&nbsp;papayawhip</td>
+          <td width="64" style="background:#FFDAB9;">&nbsp;</td>
+          <td>&nbsp;#FFDAB9&nbsp;peachpuff</td>
+          <td width="64" style="background:#FFDAB9;">&nbsp;</td>
+          <td>&nbsp;#FFDAB9&nbsp;peachpuff1</td>
+          <td width="64" style="background:#EECBAD;">&nbsp;</td>
+          <td>&nbsp;#EECBAD&nbsp;peachpuff2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#CDAF95;">&nbsp;</td>
+          <td>&nbsp;#CDAF95&nbsp;peachpuff3</td>
+          <td width="64" style="background:#8B7765;">&nbsp;</td>
+          <td>&nbsp;#8B7765&nbsp;peachpuff4</td>
+          <td width="64" style="background:#CD853F;">&nbsp;</td>
+          <td>&nbsp;#CD853F&nbsp;peru</td>
+          <td width="64" style="background:#FFC0CB;">&nbsp;</td>
+          <td>&nbsp;#FFC0CB&nbsp;pink</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFB5C5;">&nbsp;</td>
+          <td>&nbsp;#FFB5C5&nbsp;pink1</td>
+          <td width="64" style="background:#EEA9B8;">&nbsp;</td>
+          <td>&nbsp;#EEA9B8&nbsp;pink2</td>
+          <td width="64" style="background:#CD919E;">&nbsp;</td>
+          <td>&nbsp;#CD919E&nbsp;pink3</td>
+          <td width="64" style="background:#8B636C;">&nbsp;</td>
+          <td>&nbsp;#8B636C&nbsp;pink4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#DDA0DD;">&nbsp;</td>
+          <td>&nbsp;#DDA0DD&nbsp;plum</td>
+          <td width="64" style="background:#FFBBFF;">&nbsp;</td>
+          <td>&nbsp;#FFBBFF&nbsp;plum1</td>
+          <td width="64" style="background:#EEAEEE;">&nbsp;</td>
+          <td>&nbsp;#EEAEEE&nbsp;plum2</td>
+          <td width="64" style="background:#CD96CD;">&nbsp;</td>
+          <td>&nbsp;#CD96CD&nbsp;plum3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B668B;">&nbsp;</td>
+          <td>&nbsp;#8B668B&nbsp;plum4</td>
+          <td width="64" style="background:#B0E0E6;">&nbsp;</td>
+          <td>&nbsp;#B0E0E6&nbsp;powderblue</td>
+          <td width="64" style="background:#A020F0;">&nbsp;</td>
+          <td>&nbsp;#A020F0&nbsp;purple</td>
+          <td width="64" style="background:#9B30FF;">&nbsp;</td>
+          <td>&nbsp;#9B30FF&nbsp;purple1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#912CEE;">&nbsp;</td>
+          <td>&nbsp;#912CEE&nbsp;purple2</td>
+          <td width="64" style="background:#7D26CD;">&nbsp;</td>
+          <td>&nbsp;#7D26CD&nbsp;purple3</td>
+          <td width="64" style="background:#551A8B;">&nbsp;</td>
+          <td>&nbsp;#551A8B&nbsp;purple4</td>
+          <td width="64" style="background:#FF0000;">&nbsp;</td>
+          <td>&nbsp;#FF0000&nbsp;red</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF0000;">&nbsp;</td>
+          <td>&nbsp;#FF0000&nbsp;red1</td>
+          <td width="64" style="background:#EE0000;">&nbsp;</td>
+          <td>&nbsp;#EE0000&nbsp;red2</td>
+          <td width="64" style="background:#CD0000;">&nbsp;</td>
+          <td>&nbsp;#CD0000&nbsp;red3</td>
+          <td width="64" style="background:#8B0000;">&nbsp;</td>
+          <td>&nbsp;#8B0000&nbsp;red4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#BC8F8F;">&nbsp;</td>
+          <td>&nbsp;#BC8F8F&nbsp;rosybrown</td>
+          <td width="64" style="background:#FFC1C1;">&nbsp;</td>
+          <td>&nbsp;#FFC1C1&nbsp;rosybrown1</td>
+          <td width="64" style="background:#EEB4B4;">&nbsp;</td>
+          <td>&nbsp;#EEB4B4&nbsp;rosybrown2</td>
+          <td width="64" style="background:#CD9B9B;">&nbsp;</td>
+          <td>&nbsp;#CD9B9B&nbsp;rosybrown3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B6969;">&nbsp;</td>
+          <td>&nbsp;#8B6969&nbsp;rosybrown4</td>
+          <td width="64" style="background:#4169E1;">&nbsp;</td>
+          <td>&nbsp;#4169E1&nbsp;royalblue</td>
+          <td width="64" style="background:#4876FF;">&nbsp;</td>
+          <td>&nbsp;#4876FF&nbsp;royalblue1</td>
+          <td width="64" style="background:#436EEE;">&nbsp;</td>
+          <td>&nbsp;#436EEE&nbsp;royalblue2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#3A5FCD;">&nbsp;</td>
+          <td>&nbsp;#3A5FCD&nbsp;royalblue3</td>
+          <td width="64" style="background:#27408B;">&nbsp;</td>
+          <td>&nbsp;#27408B&nbsp;royalblue4</td>
+          <td width="64" style="background:#8B4513;">&nbsp;</td>
+          <td>&nbsp;#8B4513&nbsp;saddlebrown</td>
+          <td width="64" style="background:#FA8072;">&nbsp;</td>
+          <td>&nbsp;#FA8072&nbsp;salmon</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF8C69;">&nbsp;</td>
+          <td>&nbsp;#FF8C69&nbsp;salmon1</td>
+          <td width="64" style="background:#EE8262;">&nbsp;</td>
+          <td>&nbsp;#EE8262&nbsp;salmon2</td>
+          <td width="64" style="background:#CD7054;">&nbsp;</td>
+          <td>&nbsp;#CD7054&nbsp;salmon3</td>
+          <td width="64" style="background:#8B4C39;">&nbsp;</td>
+          <td>&nbsp;#8B4C39&nbsp;salmon4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#F4A460;">&nbsp;</td>
+          <td>&nbsp;#F4A460&nbsp;sandybrown</td>
+          <td width="64" style="background:#2E8B57;">&nbsp;</td>
+          <td>&nbsp;#2E8B57&nbsp;seagreen</td>
+          <td width="64" style="background:#54FF9F;">&nbsp;</td>
+          <td>&nbsp;#54FF9F&nbsp;seagreen1</td>
+          <td width="64" style="background:#4EEE94;">&nbsp;</td>
+          <td>&nbsp;#4EEE94&nbsp;seagreen2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#43CD80;">&nbsp;</td>
+          <td>&nbsp;#43CD80&nbsp;seagreen3</td>
+          <td width="64" style="background:#2E8B57;">&nbsp;</td>
+          <td>&nbsp;#2E8B57&nbsp;seagreen4</td>
+          <td width="64" style="background:#FFF5EE;">&nbsp;</td>
+          <td>&nbsp;#FFF5EE&nbsp;seashell</td>
+          <td width="64" style="background:#FFF5EE;">&nbsp;</td>
+          <td>&nbsp;#FFF5EE&nbsp;seashell1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EEE5DE;">&nbsp;</td>
+          <td>&nbsp;#EEE5DE&nbsp;seashell2</td>
+          <td width="64" style="background:#CDC5BF;">&nbsp;</td>
+          <td>&nbsp;#CDC5BF&nbsp;seashell3</td>
+          <td width="64" style="background:#8B8682;">&nbsp;</td>
+          <td>&nbsp;#8B8682&nbsp;seashell4</td>
+          <td width="64" style="background:#A0522D;">&nbsp;</td>
+          <td>&nbsp;#A0522D&nbsp;sienna</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF8247;">&nbsp;</td>
+          <td>&nbsp;#FF8247&nbsp;sienna1</td>
+          <td width="64" style="background:#EE7942;">&nbsp;</td>
+          <td>&nbsp;#EE7942&nbsp;sienna2</td>
+          <td width="64" style="background:#CD6839;">&nbsp;</td>
+          <td>&nbsp;#CD6839&nbsp;sienna3</td>
+          <td width="64" style="background:#8B4726;">&nbsp;</td>
+          <td>&nbsp;#8B4726&nbsp;sienna4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#87CEEB;">&nbsp;</td>
+          <td>&nbsp;#87CEEB&nbsp;skyblue</td>
+          <td width="64" style="background:#87CEFF;">&nbsp;</td>
+          <td>&nbsp;#87CEFF&nbsp;skyblue1</td>
+          <td width="64" style="background:#7EC0EE;">&nbsp;</td>
+          <td>&nbsp;#7EC0EE&nbsp;skyblue2</td>
+          <td width="64" style="background:#6CA6CD;">&nbsp;</td>
+          <td>&nbsp;#6CA6CD&nbsp;skyblue3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#4A708B;">&nbsp;</td>
+          <td>&nbsp;#4A708B&nbsp;skyblue4</td>
+          <td width="64" style="background:#6A5ACD;">&nbsp;</td>
+          <td>&nbsp;#6A5ACD&nbsp;slateblue</td>
+          <td width="64" style="background:#836FFF;">&nbsp;</td>
+          <td>&nbsp;#836FFF&nbsp;slateblue1</td>
+          <td width="64" style="background:#7A67EE;">&nbsp;</td>
+          <td>&nbsp;#7A67EE&nbsp;slateblue2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#6959CD;">&nbsp;</td>
+          <td>&nbsp;#6959CD&nbsp;slateblue3</td>
+          <td width="64" style="background:#473C8B;">&nbsp;</td>
+          <td>&nbsp;#473C8B&nbsp;slateblue4</td>
+          <td width="64" style="background:#708090;">&nbsp;</td>
+          <td>&nbsp;#708090&nbsp;slategray</td>
+          <td width="64" style="background:#C6E2FF;">&nbsp;</td>
+          <td>&nbsp;#C6E2FF&nbsp;slategray1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#B9D3EE;">&nbsp;</td>
+          <td>&nbsp;#B9D3EE&nbsp;slategray2</td>
+          <td width="64" style="background:#9FB6CD;">&nbsp;</td>
+          <td>&nbsp;#9FB6CD&nbsp;slategray3</td>
+          <td width="64" style="background:#6C7B8B;">&nbsp;</td>
+          <td>&nbsp;#6C7B8B&nbsp;slategray4</td>
+
+          <td width="64" style="background:#FFFAFA;">&nbsp;</td>
+          <td>&nbsp;#FFFAFA&nbsp;snow</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFFAFA;">&nbsp;</td>
+          <td>&nbsp;#FFFAFA&nbsp;snow1</td>
+          <td width="64" style="background:#EEE9E9;">&nbsp;</td>
+          <td>&nbsp;#EEE9E9&nbsp;snow2</td>
+          <td width="64" style="background:#CDC9C9;">&nbsp;</td>
+          <td>&nbsp;#CDC9C9&nbsp;snow3</td>
+          <td width="64" style="background:#8B8989;">&nbsp;</td>
+          <td>&nbsp;#8B8989&nbsp;snow4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#00FF7F;">&nbsp;</td>
+          <td>&nbsp;#00FF7F&nbsp;springgreen</td>
+          <td width="64" style="background:#00FF7F;">&nbsp;</td>
+          <td>&nbsp;#00FF7F&nbsp;springgreen1</td>
+          <td width="64" style="background:#00EE76;">&nbsp;</td>
+          <td>&nbsp;#00EE76&nbsp;springgreen2</td>
+          <td width="64" style="background:#00CD66;">&nbsp;</td>
+          <td>&nbsp;#00CD66&nbsp;springgreen3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#008B45;">&nbsp;</td>
+          <td>&nbsp;#008B45&nbsp;springgreen4</td>
+          <td width="64" style="background:#4682B4;">&nbsp;</td>
+          <td>&nbsp;#4682B4&nbsp;steelblue</td>
+          <td width="64" style="background:#63B8FF;">&nbsp;</td>
+          <td>&nbsp;#63B8FF&nbsp;steelblue1</td>
+          <td width="64" style="background:#5CACEE;">&nbsp;</td>
+          <td>&nbsp;#5CACEE&nbsp;steelblue2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#4F94CD;">&nbsp;</td>
+          <td>&nbsp;#4F94CD&nbsp;steelblue3</td>
+          <td width="64" style="background:#36648B;">&nbsp;</td>
+          <td>&nbsp;#36648B&nbsp;steelblue4</td>
+          <td width="64" style="background:#D2B48C;">&nbsp;</td>
+          <td>&nbsp;#D2B48C&nbsp;tan</td>
+          <td width="64" style="background:#FFA54F;">&nbsp;</td>
+          <td>&nbsp;#FFA54F&nbsp;tan1</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#EE9A49;">&nbsp;</td>
+          <td>&nbsp;#EE9A49&nbsp;tan2</td>
+          <td width="64" style="background:#CD853F;">&nbsp;</td>
+          <td>&nbsp;#CD853F&nbsp;tan3</td>
+          <td width="64" style="background:#8B5A2B;">&nbsp;</td>
+          <td>&nbsp;#8B5A2B&nbsp;tan4</td>
+          <td width="64" style="background:#D8BFD8;">&nbsp;</td>
+          <td>&nbsp;#D8BFD8&nbsp;thistle</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFE1FF;">&nbsp;</td>
+          <td>&nbsp;#FFE1FF&nbsp;thistle1</td>
+          <td width="64" style="background:#EED2EE;">&nbsp;</td>
+          <td>&nbsp;#EED2EE&nbsp;thistle2</td>
+          <td width="64" style="background:#CDB5CD;">&nbsp;</td>
+          <td>&nbsp;#CDB5CD&nbsp;thistle3</td>
+          <td width="64" style="background:#8B7B8B;">&nbsp;</td>
+          <td>&nbsp;#8B7B8B&nbsp;thistle4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF6347;">&nbsp;</td>
+          <td>&nbsp;#FF6347&nbsp;tomato</td>
+          <td width="64" style="background:#FF6347;">&nbsp;</td>
+          <td>&nbsp;#FF6347&nbsp;tomato1</td>
+          <td width="64" style="background:#EE5C42;">&nbsp;</td>
+          <td>&nbsp;#EE5C42&nbsp;tomato2</td>
+          <td width="64" style="background:#CD4F39;">&nbsp;</td>
+          <td>&nbsp;#CD4F39&nbsp;tomato3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B3626;">&nbsp;</td>
+          <td>&nbsp;#8B3626&nbsp;tomato4</td>
+          <td width="64" style="background:#40E0D0;">&nbsp;</td>
+          <td>&nbsp;#40E0D0&nbsp;turquoise</td>
+          <td width="64" style="background:#00F5FF;">&nbsp;</td>
+          <td>&nbsp;#00F5FF&nbsp;turquoise1</td>
+          <td width="64" style="background:#00E5EE;">&nbsp;</td>
+          <td>&nbsp;#00E5EE&nbsp;turquoise2</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#00C5CD;">&nbsp;</td>
+          <td>&nbsp;#00C5CD&nbsp;turquoise3</td>
+          <td width="64" style="background:#00868B;">&nbsp;</td>
+          <td>&nbsp;#00868B&nbsp;turquoise4</td>
+          <td width="64" style="background:#EE82EE;">&nbsp;</td>
+          <td>&nbsp;#EE82EE&nbsp;violet</td>
+          <td width="64" style="background:#D02090;">&nbsp;</td>
+          <td>&nbsp;#D02090&nbsp;violetred</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FF3E96;">&nbsp;</td>
+          <td>&nbsp;#FF3E96&nbsp;violetred1</td>
+          <td width="64" style="background:#EE3A8C;">&nbsp;</td>
+          <td>&nbsp;#EE3A8C&nbsp;violetred2</td>
+          <td width="64" style="background:#CD3278;">&nbsp;</td>
+          <td>&nbsp;#CD3278&nbsp;violetred3</td>
+          <td width="64" style="background:#8B2252;">&nbsp;</td>
+          <td>&nbsp;#8B2252&nbsp;violetred4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#F5DEB3;">&nbsp;</td>
+          <td>&nbsp;#F5DEB3&nbsp;wheat</td>
+          <td width="64" style="background:#FFE7BA;">&nbsp;</td>
+          <td>&nbsp;#FFE7BA&nbsp;wheat1</td>
+          <td width="64" style="background:#EED8AE;">&nbsp;</td>
+          <td>&nbsp;#EED8AE&nbsp;wheat2</td>
+          <td width="64" style="background:#CDBA96;">&nbsp;</td>
+          <td>&nbsp;#CDBA96&nbsp;wheat3</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#8B7E66;">&nbsp;</td>
+          <td>&nbsp;#8B7E66&nbsp;wheat4</td>
+          <td width="64" style="background:#FFFFFF;">&nbsp;</td>
+          <td>&nbsp;#FFFFFF&nbsp;white</td>
+          <td width="64" style="background:#F5F5F5;">&nbsp;</td>
+          <td>&nbsp;#F5F5F5&nbsp;whitesmoke</td>
+          <td width="64" style="background:#FFFF00;">&nbsp;</td>
+          <td>&nbsp;#FFFF00&nbsp;yellow</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#FFFF00;">&nbsp;</td>
+          <td>&nbsp;#FFFF00&nbsp;yellow1</td>
+          <td width="64" style="background:#EEEE00;">&nbsp;</td>
+          <td>&nbsp;#EEEE00&nbsp;yellow2</td>
+          <td width="64" style="background:#CDCD00;">&nbsp;</td>
+          <td>&nbsp;#CDCD00&nbsp;yellow3</td>
+          <td width="64" style="background:#8B8B00;">&nbsp;</td>
+          <td>&nbsp;#8B8B00&nbsp;yellow4</td>
+        </tr>
+        <tr>
+          <td width="64" style="background:#9ACD32;">&nbsp;</td>
+          <td>&nbsp;#9ACD32&nbsp;yellowgreen</td>
+
+      </table>
+    </div>
+  </body>
+
+</html>

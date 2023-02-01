@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta property="og:title" content="Activity 2: Programming Standards">
+    <title>Activity 2: Programming Standards</title>
+    <link href="../resources/course_techno.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header"><img class="logo" src="../resources/images/STFX Logo.png" />
+        <div class="courseTitle">ICS2O: Introduction to Computer Studies, Grade 10, Open</div>
+
+        <h1>Unit 4: Programming with Python</h1>
+
+        <h2>Activity 2: Programming Standards</h2>
+      </div>
+
+      <h3>Good Programming Practices</h3>
+
+      <hr />
+      <p>Up until now, you were asked to create programs that were tested by an automatic grader. That grader was limited in its functionality; it could create various inputs to
+        test your program and examine the program outputs. At times the grader could also limit which python functions you were allowed to use in your code.</p>
+
+      <p>However, writing good programs is about more than simply generating the correct output for a given input. Programmers must also learn to plan their programs out before
+        starting to write their code, use sound design principles, and create code that is both clear in its intent and maintainable in the long term. For this and future
+        activities, your programs will be assessed for <strong>style</strong> and <strong>design</strong>, as well as <strong>correctness</strong>. .</p>
+
+      <h5 style="padding-left: 30px;">Style</h5>
+
+      <ul style="padding-left: 60px;">
+        <li>Internal Documentation (Header, labelled code sections, documentation descriptions, other internal comments)</li>
+        <li>Structure (Indentation, whitespace, code location, variable naming &amp; data types, general readability)</li>
+      </ul>
+
+      <h5 style="padding-left: 30px;">Design</h5>
+
+      <ul style="padding-left: 60px;">
+        <li>Planning: How did you plan the content of your program before coding? (IPO, HIPO, flowchart, storyboard)</li>
+        <li>Is your program design logical, efficient and constructed correctly? (not formally evaluated at this time, but this is a hallmark of a good coder!)</li>
+      </ul>
+
+      <h5 style="padding-left: 30px;">Correctness</h5>
+
+      <ul style="padding-left: 60px;">
+        <li>Does your program produce the expected results, using the concepts from the course?</li>
+      </ul>
+
+      <h4>Program Style</h4>
+
+      <table cellpadding="5" class="picturetable" summary="This table is for formatting purposes." width="95%">
+        <tbody>
+          <tr>
+            <td>Programmers often work in teams, and for this reason it is critical to include <strong>internal documentation </strong>so that other programmers can easily
+              understand the intentions and the purpose of your code. Internal documentation is created in Python by starting the line with the # sign (other languages use other
+              symbols).
+
+              <p>Comments at the beginning of the program <strong>must</strong> include the <strong>name of the author</strong>, the <strong>name of the program</strong>,
+                the<strong> date it was created</strong>, and its <strong>purpose</strong>. After this the different sections of program should also be identified. These sections
+                should be labelled, <strong>#Variable Definition</strong>, <strong>#Input</strong>, <strong>#Processing</strong> and <strong>#Output</strong>. More complicated
+                programs will require additional comments.</p>
+
+              <p>All good coding requires comments. Remember that just because your program works does not mean you will get full marks; this is actually only a portion of the
+                final mark for the assignment.</p>
+            </td>
+            <th>
+              <p><img height="404" src="images/A2comic_comments.png" width="264" /></p>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Other elements of program style involve proper <strong>indentation</strong> and use of <strong>whitespace</strong>, which when used properly enhance code readability.
+        Python uses indentation to create blocks of code, which is one of the reasons it is such a good teaching language. (Other languages do not require this and it can make for
+        very hard to read code!) White space is simply allowing for blank lines in your code to group sections of code together and visually separate them from other sections of
+        code.</p>
+
+      <table cellpadding="5" class="picturetable" summary="This table is for formatting purposes." width="95%">
+        <tbody>
+          <tr>
+            <th>
+              <p><img height="378" src="images/A2variables_comic.png" width="408" /></p>
+            </th>
+            <td>
+              <p>When <strong>naming variables</strong>, choose variable names that make the purpose of the variable clear. A convention that we will use in this class is to always
+                begin variable names with a lowercase letter. Keep in mind that in Python, as in most programming languages, variable names are case sensitive; <tt>name</tt> is not
+                the same as <tt>Name</tt>.</p>
+
+              <p>For longer variable names requiring 2 or more words, each additional word will begin with an uppercase letter<br />
+                ex: <tt>highestMark</tt>, <tt>numberOfStudents</tt>.</p>
+
+              <p>Do not use reserved words for variable names; if a word turns blue in Eclipse, it is a reserved word and cannot be used as a variable name.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Program Design</h4>
+
+      <p>We create programs in order to solve problems, so it&#39;s important to have a process for problem-solving. Recall from Unit 1: A computer&#39;s hardware can be broken
+        down into 4 categories: Input devices, System Unit, Storage Unit, Output devices. In a similar way, many computer programs can be broken down into 3 parts:</p>
+
+      <ul>
+        <li>Input</li>
+        <ul>
+          <li>What information will you require from the user?</li>
+        </ul>
+
+        <li>Processing &amp; Storage</li>
+        <ul>
+          <li>What will you do with that information?</li>
+        </ul>
+
+        <li>Output</li>
+        <ul>
+          <li>What will you show to the user when the program is complete?</li>
+        </ul>
+
+      </ul>
+
+      <p>BEFORE sitting at the computer and writing code, it&#39;s important to plan the content of your program using a problem-solving model like an IPO chart. More complicated
+        programs will require other problem-solving models, which we will see later.</p>
+
+      <table style="border: 3px solid rgb(8, 83, 148); border-image: none; width: 714.08px;">
+        <tbody>
+          <tr>
+            <td style="border: 2px solid rgb(8, 83, 148); border-image: none; width: 25%; text-align: center; vertical-align: middle;"><strong>INPUT</strong></td>
+            <td style="border: 2px solid rgb(8, 83, 148); border-image: none; width: 40%; text-align: center; vertical-align: middle;"><strong>PROCESSING &amp; STORAGE</strong>
+            </td>
+            <td style="border: 2px solid rgb(8, 83, 148); border-image: none; width: 35%; text-align: center; vertical-align: middle;"><strong>OUTPUT</strong></td>
+          </tr>
+          <tr>
+            <td style="border: 2px solid rgb(8, 83, 148); border-image: none; width: 199px; text-align: left; vertical-align: middle;">
+              <ul>
+                <li>Describe (define) variables used for input</li>
+                <li>Describe (define) any variables or constants for known values</li>
+              </ul>
+            </td>
+            <td style="border: 2px solid rgb(8, 83, 148); border-image: none; width: 287px; text-align: left; vertical-align: middle;">
+              <ul>
+                <li>Describe what data processing is to occur here, in order, including:
+                  <ul>
+                    <li>input prompts &amp; retrieval</li>
+                    <li>Describe (define) variables calculated by the processing</li>
+                    <li>Any other actions that are required</li>
+                  </ul>
+                </li>
+                <li>One bullet for each piece of processing</li>
+              </ul>
+            </td>
+            <td style="border: 2px solid rgb(8, 83, 148); border-image: none; width: 223.08px; text-align: left; vertical-align: middle;">
+              <ul>
+                <li>Describe the text (or other form of output) that is to be shown to the user</li>
+                <li>Use quotes &amp; concatenation if needed</li>
+                <li>E.g. Display &quot;your age is &quot; + userAge</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Here are some example IPO charts for simple programs, such as calculating the area of a rectangle, finding the cost of apples, or finding the average of three numbers:</p>
+
+      <p><img alt="IPO Chart #1" src="images/A2IPO_1.jpg" title="IPO Chart #1" /></p>
+
+      <p><img alt="IPO Chart #3" src="images/A2IPO_3.jpg" title="IPO Chart #3" /></p>
+
+      <p><img alt="IPO Chart #2" src="images/A2IPO_2.jpg" title="IPO Chart #2" /></p>
+
+      <h4>Program Correctness</h4>
+
+      <p>Once your have designed and coded your program, it is important to test it! For now, you are safe to assume that the user will enter valid data (i.e. they will input a
+        number when you ask for a number, they will input a string when you ask for a string, etc). However, it is still important to test your program with a range of data,
+        especially boundary conditions (conditions that the program should distinguish between) and extreme values (highest or lowest values in the acceptable range). Recall that
+        when the grader checked your program, they checked the output for a variety of inputs. Make sure you do the same!</p>
+
+      <table cellpadding="5" class="picturetable" summary="This table is for formatting purposes." width="95%">
+        <tbody>
+          <tr>
+            <th>
+              <p><img height="395" src="images/A2plagiarism_comic.png" width="288" /></p>
+            </th>
+            <td>
+              <p>One final note about academic integrity: plagiarism and other acts of academic dishonesty will be dealt with in accordance with the school&rsquo;s <a
+                  href="https://drive.google.com/file/d/0BwRCWUOoSIsFd2VQM0d1OHhxUUZmVDR2VzFXaGN3bjhUYlFV/view" rel="noopener noreferrer" target="_blank">rules</a>. Talking about
+                the questions is permitted, this is called collaboration. Copying/using/giving code from/to friends or other sources is considered cheating.</p>
+
+              <p>To ensure you do not cross this line; when talking about a question with someone do so <strong>AWAY</strong> from your computer with a paper and pen in hand (or
+                better, use a whiteboard!) and write out <strong>IDEAS</strong>, not code. Then when you are finished talking return to your computer and implement the ideas you
+                have come up with.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+      <h4>Data Types</h4>
+
+      <p>One final reminder - in Python you do not need to specify what type of variable you are using (<strong>int</strong>, <strong>float</strong>, or <strong>str</strong>); this
+        is because Python is a dynamically-typed language (meaning that Python figures out what type the variable is by how you use it.) However, Python is also strongly typed, in
+        that you must use type conversion to change a <strong>str</strong> to an <strong>int</strong>, or to change a <strong>float</strong> to a <strong>str</strong>.</p>
+
+      <p>A common example of this is when you want the user to input a number. Anything the user types by default is considered a <strong>str</strong> in Python. If you wish to use
+        a user&#39;s input in math calculations, you must convert it to either an <strong>int</strong> or a <strong>float</strong>.</p>
+
+      <p>Below is some sample code to help you with this task. It also demonstrates another way to use the <strong>input()</strong> function; where you can specify the prompt for
+        the user without using a separate <strong>print()</strong> function.</p>
+
+      <pre class="code">
+# Simple Input Addition Program
+# ICS2O Unit 4, Activity 2
+# Created by K. Spindler
+
+# Input: user&#39;s name
+name = input(&#39;Please enter your name: &#39;)
+print(&#39;Hello &#39; + name)
+
+# Input: the 2 numbers to be added
+num1 = int(input(name + &#39;, please enter a number: &#39;))
+num2 = int(input(&#39;Thanks &#39; + name + &#39;, please enter another number: &#39;))
+
+#Processing &amp; Output
+print(&#39;The sum of&#39;, num1, &#39;and&#39;, num2, &#39;is &#39; + str(num1 + num2))
+</pre>
+
+      <h3>Evidence of Learning</h3>
+
+      <hr />
+      <h4 class="h4_assignment_title"><img class="icon" src="../resources/images/dropbox.gif" />Programming Exercises</h4>
+
+      <div class="dropbox">
+
+        <p>Save the following programs in the <strong>activity2</strong> package of your Unit 4 Python Project.</p>
+
+        <p>You must complete an <strong>IPO chart</strong> for at least <strong>TWO</strong> of the programs below. Use the Activity 2 evidence card on Hapara for your IPO charts.</p>
+
+        <ol>
+          <li>Create a program (pydev module) that will ask the user for the height, width and depth of a rectangular prism and display the volume of the prism. Name the program <strong>Q1Volume</strong> (file name will be Q1Volume.py)</li>
+          <li>Create a program that will calculate the cost to carpet a room in the user&rsquo;s house. You know that carpet costs $2.25 per square metre; you will then ask the user for the length and width of the carpet in metres. The program will finish by informing the user of their cost in a user-friendly manner. Name the program <strong>Q2CarpetingCost</strong></li>
+          <li>Create a program that will accept the cost of 10 items and then add them together and calculate the tax (HST) for these items. The program should output the total cost of the items, the tax, and the total cost including the taxes. Remember to include appropriate prompts, and labels for the outputs. Name the program <strong>Q3Taxes</strong></li>
+          <li>Create a program that will accept five numbers from the user. Your program should then calculate the sum and average of the five entered values. The program will then display the numbers and results in a table-like format. The table should label each number, Number 1 .. Number 5, Sum, Average, and then output the numbers and results under the labels. Name the program <strong>Q4Numbers</strong></li>
+        </ol>
+
+        <p>Commit and push your code to your GitHub repository EVERY DAY, and submit the Activity 2 evidence card when you are done. It is YOUR responsibility to ensure that your code is on Github!</p>
+      </div>
+    </div>
+  </body>
+
+</html>
