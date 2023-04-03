@@ -251,8 +251,17 @@ draw.circle(gameDisplay, Color('yellow'), (50, 50), 50)
 # show the graphics on the screen
 display.flip()
 
-# Wait for user input before closing the window
-input("Press enter to exit")</pre>
+# Main game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+            
+# Quit Pygame
+pygame.quit()
+
+</pre>
 
       <h3>Evidence of Learning</h3>
 
