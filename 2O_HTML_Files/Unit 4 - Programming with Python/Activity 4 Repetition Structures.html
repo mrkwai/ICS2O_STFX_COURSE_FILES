@@ -63,10 +63,10 @@
         Console view.
 
         <pre class=code>'''
-Created: Aug 2018
-StaightLine.py
+Created: April 2023
+StraightLine.py
 simple demonstration of pygame animation
-@author: K. Spindler
+@author: A. Kwai
 '''
 import pygame
 
@@ -88,7 +88,12 @@ clock = time.Clock()
 # get a surface for graphics display
 gameDisplay = display.set_mode(SCREEN_SIZE)
 
-while True:
+running = True
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
     # white background
     gameDisplay.fill(Color('white'))
 
@@ -103,7 +108,10 @@ while True:
     center_y += 1
 
     #delay the program to obtain 45 frames per second
-    clock.tick(45)</pre>
+    clock.tick(45)
+    
+# Quit Pygame
+pygame.quit())</pre>
 
         <h4>Conditional Repetition</h4>
 
